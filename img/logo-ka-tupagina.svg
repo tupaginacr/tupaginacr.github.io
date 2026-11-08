@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 90" width="600" height="180">
+  <title>KA tu página</title>
+  <rect x="6" y="13" width="64" height="64" rx="15" fill="#0e2340"/>
+  <text x="38" y="56" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="30" font-weight="700" fill="#ffffff">K<tspan fill="#7fd1c6">A</tspan></text>
+  <line x1="86" y1="17" x2="86" y2="73" stroke="#c9d5e2" stroke-width="1.5"/>
+  <text x="100" y="49" font-family="Fraunces, Georgia, serif" font-size="29" font-weight="700" fill="#0e2340"><tspan fill="#7fd1c6">tu</tspan> página</text>
+  <text x="101" y="70" font-family="Inter, Arial, sans-serif" font-size="11" letter-spacing="2" fill="#55657a">DISEÑO WEB · CR</text>
+</svg>

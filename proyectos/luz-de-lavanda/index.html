@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luz de Lavanda | Velas y jabones artesanales</title>
+  <meta name="description" content="Proyecto conceptual de tupágina.cr: sitio web para un emprendimiento de velas y jabones artesanales.">
+  <!-- Vista previa al compartir: cambiar "https://tupaginacr.github.io/" por el dominio propio cuando exista -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CR">
+  <meta property="og:title" content="Luz de Lavanda | Proyecto conceptual de tupágina.cr">
+  <meta property="og:description" content="Sitio web conceptual para un emprendimiento de velas y jabones artesanales. Diseño y desarrollo: tupágina.cr.">
+  <meta property="og:url" content="https://tupaginacr.github.io/proyectos/luz-de-lavanda/">
+  <meta property="og:image" content="https://tupaginacr.github.io/img/portafolio-luz-de-lavanda.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23efe8f6'/%3E%3Cpath d='M32 12c6 8 6 14 0 18c-6-4-6-10 0-18z' fill='%23e3a35b'/%3E%3Crect x='22' y='32' width='20' height='22' rx='4' fill='%237d6aa8'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --lavanda: #7d6aa8;
+      --lavanda-claro: #efe8f6;
+      --ciruela: #3d2f52;
+      --salvia: #9fb08a;
+      --salvia-claro: #e9eee2;
+      --rubor: #ecc9c7;
+      --crema: #fcf8f3;
+      --miel: #e3a35b;
+      --gris: #6e6578;
+    }
+    body { font-family: 'Nunito Sans', sans-serif; color: var(--ciruela); background: var(--crema); }
+    h1, h2, h3, .marca-texto { font-family: 'Cormorant Garamond', serif; font-weight: 700; }
+    section { padding: 100px 0; }
+    .etiqueta { text-transform: uppercase; letter-spacing: .2em; font-size: .76rem; font-weight: 700; color: var(--lavanda); }
+    .texto-suave { color: var(--gris); }
+
+    .aviso-concepto { background: var(--ciruela); color: #e6dcf2; font-size: .82rem; text-align: center; padding: .45rem 1rem; }
+    .aviso-concepto a { color: var(--rubor); font-weight: 700; }
+
+    .navbar { background: rgba(252,248,243,.92); backdrop-filter: blur(6px); padding: 1rem 0; border-bottom: 1px solid #efe7dd; }
+    .navbar .nav-link { color: var(--ciruela) !important; font-weight: 600; }
+    .navbar .nav-link:hover { color: var(--lavanda) !important; }
+    .marca { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--ciruela); }
+    .marca-texto { font-size: 1.7rem; line-height: .9; }
+    .marca-texto small { display: block; font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: .62rem; letter-spacing: .24em; color: var(--lavanda); margin-top: .3rem; }
+
+    .btn-lavanda { background: var(--lavanda); color: #fff; border-radius: 50px; padding: .85rem 1.8rem; font-weight: 700; border: none; }
+    .btn-lavanda:hover { background: #6a5893; color: #fff; }
+    .btn-linea { border: 1.5px solid var(--ciruela); color: var(--ciruela); border-radius: 50px; padding: .8rem 1.7rem; font-weight: 700; }
+    .btn-linea:hover { background: var(--ciruela); color: #fff; }
+
+    .hero { padding: 90px 0 110px; background: radial-gradient(circle at 80% 30%, var(--lavanda-claro) 0%, var(--crema) 55%); overflow: hidden; }
+    .hero h1 { font-size: clamp(2.9rem, 6vw, 4.9rem); line-height: 1; }
+    .hero h1 em { color: var(--lavanda); }
+    .hero p.lead { max-width: 500px; color: var(--gris); }
+    .sello { display: inline-flex; align-items: center; gap: .5rem; background: #fff; border-radius: 50px; padding: .45rem 1rem; font-size: .85rem; font-weight: 600; box-shadow: 0 10px 25px -15px rgba(61,47,82,.4); }
+    .sello i { color: var(--salvia); }
+    .foto-portada { position: relative; }
+    .foto-portada::before { content: ""; position: absolute; inset: -18px -18px 18px 18px; border-radius: 34px; background: var(--lavanda-claro); z-index: 0; }
+    .foto-portada img { position: relative; z-index: 1; border-radius: 30px; aspect-ratio: 1; object-fit: cover; box-shadow: 0 30px 60px -30px rgba(61,47,82,.5); }
+    .tarjeta-flotante { position: absolute; z-index: 2; left: -22px; bottom: 34px; background: #fff; border-radius: 18px; padding: .9rem 1.2rem; display: flex; gap: .8rem; align-items: center; box-shadow: 0 20px 40px -20px rgba(61,47,82,.45); }
+    .tarjeta-flotante i { font-size: 1.5rem; color: var(--miel); }
+    .tarjeta-flotante strong { display: block; font-size: .95rem; }
+    .tarjeta-flotante span { font-size: .8rem; color: var(--gris); }
+    @media (max-width: 575px) { .tarjeta-flotante { left: 10px; bottom: 14px; } .foto-portada::before { inset: -10px -10px 10px 10px; } }
+
+    .categoria { background: #fff; border-radius: 22px; padding: 1.6rem 1.2rem; text-align: center; height: 100%; border: 1px solid #efe7dd; transition: transform .25s, border-color .25s; text-decoration: none; color: var(--ciruela); display: block; }
+    .categoria:hover { transform: translateY(-5px); border-color: var(--lavanda); color: var(--ciruela); }
+    .categoria .icono { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; }
+    .categoria h3 { font-size: 1.3rem; margin-bottom: .3rem; }
+    .categoria p { font-size: .85rem; color: var(--gris); margin: 0; }
+
+    .productos { background: #fff; }
+    .producto { border-radius: 24px; overflow: hidden; background: var(--crema); height: 100%; border: 1px solid #efe7dd; }
+    .producto .foto { aspect-ratio: 1; overflow: hidden; }
+    .producto .foto img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .producto:hover .foto img { transform: scale(1.05); }
+    .producto .cuerpo { padding: 1.4rem; }
+    .producto h3 { font-size: 1.45rem; margin-bottom: .2rem; }
+    .precio { font-weight: 700; font-size: 1.15rem; }
+    .aroma { font-size: .8rem; color: var(--gris); }
+    .btn-pedir { border-radius: 50px; font-size: .85rem; font-weight: 700; background: var(--ciruela); color: #fff; padding: .45rem 1rem; }
+    .btn-pedir:hover { background: var(--lavanda); color: #fff; }
+
+    .beneficio { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+    .beneficio .icono { flex-shrink: 0; width: 50px; height: 50px; border-radius: 14px; background: var(--salvia-claro); color: #5d7350; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+    .beneficio p { margin: 0; color: var(--gris); font-size: .95rem; }
+
+    .proceso { background: var(--ciruela); color: #fff; }
+    .proceso .texto-suave { color: #cfc3df; }
+    .foto-proceso { border-radius: 28px; aspect-ratio: 21 / 9; object-fit: cover; object-position: center 40%; }
+    .paso { text-align: center; padding: 0 .5rem; }
+    .paso .numero { font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; color: var(--rubor); line-height: 1; }
+
+    .personalizado { background: linear-gradient(120deg, var(--rubor), #f4dedb); border-radius: 30px; padding: 3.5rem; }
+    .foto-evento { object-fit: cover; min-height: 320px; }
+    .personalizado .chip { display: inline-block; background: rgba(255,255,255,.7); border-radius: 50px; padding: .45rem 1rem; font-weight: 600; font-size: .88rem; margin: 0 .3rem .5rem 0; }
+
+    .contacto .form-control, .contacto .form-select { border-radius: 14px; padding: .8rem 1rem; border: 1px solid #e6dccf; background: #fff; }
+
+    footer { background: #2a2038; color: #c9bddb; padding: 60px 0 25px; font-size: .92rem; }
+    footer a { color: #c9bddb; text-decoration: none; }
+    footer a:hover { color: var(--rubor); }
+    .redes a { width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,.2); display: inline-flex; align-items: center; justify-content: center; color: #fff; margin-right: .4rem; }
+    .credito { border-top: 1px solid rgba(255,255,255,.12); margin-top: 2.5rem; padding-top: 1.2rem; font-size: .82rem; }
+  </style>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="frasco" viewBox="0 0 120 170">
+        <path d="M60 8c9 12 9 22 0 28c-9-6-9-16 0-28z" fill="#e3a35b"/>
+        <path d="M60 18c4 6 4 11 0 14c-4-3-4-8 0-14z" fill="#fbe3b8"/>
+        <line x1="60" y1="36" x2="60" y2="50" stroke="#3d2f52" stroke-width="2.5"/>
+        <rect x="14" y="46" width="92" height="118" rx="16" fill="currentColor" opacity=".35"/>
+        <rect x="20" y="58" width="80" height="100" rx="12" fill="currentColor"/>
+        <rect x="32" y="92" width="56" height="36" rx="6" fill="#fcf8f3"/>
+        <rect x="40" y="104" width="40" height="3" rx="1.5" fill="#3d2f52" opacity=".5"/>
+        <rect x="46" y="112" width="28" height="3" rx="1.5" fill="#3d2f52" opacity=".3"/>
+      </symbol>
+      <symbol id="jabon" viewBox="0 0 160 120">
+        <rect x="10" y="38" width="140" height="70" rx="18" fill="currentColor"/>
+        <rect x="10" y="30" width="140" height="62" rx="18" fill="currentColor"/>
+        <rect x="10" y="30" width="140" height="62" rx="18" fill="#fff" opacity=".25"/>
+        <circle cx="52" cy="58" r="6" fill="#fff" opacity=".6"/><circle cx="80" cy="54" r="4" fill="#fff" opacity=".6"/><circle cx="104" cy="64" r="5" fill="#fff" opacity=".6"/>
+        <path d="M120 22c10-12 22-10 26-2" stroke="#7d6aa8" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="146" cy="18" r="5" fill="#7d6aa8"/><circle cx="138" cy="12" r="4" fill="#9a88c4"/>
+      </symbol>
+      <symbol id="difusor" viewBox="0 0 120 170">
+        <line x1="50" y1="70" x2="30" y2="6" stroke="#8a6a4a" stroke-width="3"/>
+        <line x1="60" y1="70" x2="60" y2="2" stroke="#8a6a4a" stroke-width="3"/>
+        <line x1="70" y1="70" x2="92" y2="8" stroke="#8a6a4a" stroke-width="3"/>
+        <path d="M40 66 h40 v14 q24 14 24 44 q0 40 -44 40 q-44 0 -44 -40 q0 -30 24 -44z" fill="currentColor"/>
+        <rect x="38" y="60" width="44" height="12" rx="4" fill="#3d2f52"/>
+        <rect x="34" y="112" width="52" height="26" rx="5" fill="#fcf8f3"/>
+      </symbol>
+      <symbol id="lavanda" viewBox="0 0 40 120">
+        <path d="M20 120 V30" stroke="#7a9268" stroke-width="2.5"/>
+        <g fill="#8f7cc0"><ellipse cx="20" cy="10" rx="5" ry="7"/><ellipse cx="14" cy="22" rx="5" ry="7"/><ellipse cx="26" cy="22" rx="5" ry="7"/><ellipse cx="14" cy="36" rx="5" ry="7"/><ellipse cx="26" cy="36" rx="5" ry="7"/><ellipse cx="20" cy="48" rx="5" ry="7"/></g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="aviso-concepto">
+    Proyecto conceptual · Marca ficticia creada para mostrar un diseño de <a href="../../index.html">tupágina.cr</a>
+  </div>
+
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="marca" href="#inicio">
+        <svg width="46" height="46" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#efe8f6"/>
+          <path d="M32 10c7 9 7 16 0 21c-7-5-7-12 0-21z" fill="#e3a35b"/>
+          <rect x="21" y="33" width="22" height="21" rx="5" fill="#7d6aa8"/>
+          <path d="M13 50c2-8 4-12 8-16M51 50c-2-8-4-12-8-16" stroke="#9fb08a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="marca-texto">Luz de Lavanda<small>VELAS Y JABONES ARTESANALES</small></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Abrir menú">
+        <i class="bi bi-list fs-1"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#categorias">Categorías</a></li>
+          <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#aromaterapia">Aromaterapia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#personalizados">Personalizados</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-lavanda btn-sm px-4" href="#contacto">Hacer un pedido</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <p class="etiqueta mb-3">Hecho a mano en Costa Rica</p>
+          <h1 class="mb-4">Aromas que <em>iluminan</em> cada rincón de su hogar.</h1>
+          <p class="lead mb-4">Velas de cera de soya y jabones con ingredientes naturales, elaborados en pequeñas cantidades con mucho cariño.</p>
+          <div class="d-flex flex-wrap gap-2 mb-5">
+            <span class="sello"><i class="bi bi-flower2"></i>Cera de soya</span>
+            <span class="sello"><i class="bi bi-droplet"></i>Aceites esenciales</span>
+            <span class="sello"><i class="bi bi-recycle"></i>Empaque reutilizable</span>
+          </div>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#productos" class="btn btn-lavanda">Ver productos</a>
+            <a href="#personalizados" class="btn btn-linea">Pedidos personalizados</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="foto-portada">
+            <img src="img/portada.jpg" alt="Velas y jabones artesanales con lavanda" class="w-100">
+            <div class="tarjeta-flotante"><i class="bi bi-stars"></i><div><strong>Hecho a mano</strong><span>En pequeños lotes</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="categorias" class="pt-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="etiqueta">Categorías</p>
+        <h2 class="display-5">Encuentre su aroma favorito</h2>
+      </div>
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-md-4 col-lg"><a class="categoria" href="#aromaterapia"><div class="icono" style="background:#efe8f6;color:#7d6aa8"><i class="bi bi-wind"></i></div><h3>Aromaterapia</h3><p>Aceites y brumas</p></a></div>
+        <div class="col-6 col-md-4 col-lg"><a class="categoria" href="#productos"><div class="icono" style="background:#fbeceb;color:#c47a76"><i class="bi bi-droplet-half"></i></div><h3>Jabones</h3><p>Artesanales</p></a></div>
+        <div class="col-6 col-md-4 col-lg"><a class="categoria" href="#productos"><div class="icono" style="background:#fdf1e1;color:#c58a3f"><i class="bi bi-fire"></i></div><h3>Velas</h3><p>Aromáticas</p></a></div>
+        <div class="col-6 col-md-4 col-lg"><a class="categoria" href="#productos"><div class="icono" style="background:#e9eee2;color:#5d7350"><i class="bi bi-car-front"></i></div><h3>Para el carro</h3><p>Aromatizantes</p></a></div>
+        <div class="col-6 col-md-4 col-lg"><a class="categoria" href="#productos"><div class="icono" style="background:#e6eef4;color:#4f7391"><i class="bi bi-heart-pulse"></i></div><h3>Terapéuticos</h3><p>Jabones para piel sensible</p></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="productos" id="productos">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-end mb-5 gap-3">
+        <div>
+          <p class="etiqueta">Más vendidos</p>
+          <h2 class="display-5 mb-0">Productos destacados</h2>
+        </div>
+        <a href="#contacto" class="btn btn-linea">Ver catálogo completo</a>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-4">
+          <div class="producto">
+            <div class="foto"><img src="img/vela-lavanda.jpg" alt="Vela de lavanda y vainilla" loading="lazy"></div>
+            <div class="cuerpo">
+              <h3>Vela Lavanda y Vainilla</h3>
+              <p class="aroma">Relajante · 40 horas de duración</p>
+              <div class="d-flex justify-content-between align-items-center"><span class="precio">₡8.500</span><a href="#contacto" class="btn btn-pedir">Pedir</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="producto">
+            <div class="foto"><img src="img/vela-eucalipto.jpg" alt="Vela de eucalipto y menta" loading="lazy"></div>
+            <div class="cuerpo">
+              <h3>Vela Eucalipto y Menta</h3>
+              <p class="aroma">Refrescante · 40 horas de duración</p>
+              <div class="d-flex justify-content-between align-items-center"><span class="precio">₡8.500</span><a href="#contacto" class="btn btn-pedir">Pedir</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="producto">
+            <div class="foto"><img src="img/jabon-rosas.jpg" alt="Jabón de rosas y avena" loading="lazy"></div>
+            <div class="cuerpo">
+              <h3>Jabón de Rosas y Avena</h3>
+              <p class="aroma">Hidratante · Barra de 120 g</p>
+              <div class="d-flex justify-content-between align-items-center"><span class="precio">₡3.200</span><a href="#contacto" class="btn btn-pedir">Pedir</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="producto">
+            <div class="foto"><img src="img/jabon-miel.jpg" alt="Jabón de miel y cúrcuma" loading="lazy"></div>
+            <div class="cuerpo">
+              <h3>Jabón de Miel y Cúrcuma</h3>
+              <p class="aroma">Iluminador · Barra de 120 g</p>
+              <div class="d-flex justify-content-between align-items-center"><span class="precio">₡3.400</span><a href="#contacto" class="btn btn-pedir">Pedir</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="producto">
+            <div class="foto"><img src="img/difusor.jpg" alt="Difusor de coco y limón" loading="lazy"></div>
+            <div class="cuerpo">
+              <h3>Difusor de Coco y Limón</h3>
+              <p class="aroma">Para el hogar · 120 ml</p>
+              <div class="d-flex justify-content-between align-items-center"><span class="precio">₡9.900</span><a href="#contacto" class="btn btn-pedir">Pedir</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="producto">
+            <div class="foto"><img src="img/jabon-aloe.jpg" alt="Jabón de aloe y pepino" loading="lazy"></div>
+            <div class="cuerpo">
+              <h3>Jabón de Aloe y Pepino</h3>
+              <p class="aroma">Para piel sensible · Barra de 120 g</p>
+              <div class="d-flex justify-content-between align-items-center"><span class="precio">₡3.500</span><a href="#contacto" class="btn btn-pedir">Pedir</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="aromaterapia">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <p class="etiqueta">Aromaterapia</p>
+          <h2 class="display-5 mb-4">Bienestar en cada aroma</h2>
+          <p class="texto-suave">La aromaterapia es una práctica natural que utiliza aceites esenciales de plantas para crear ambientes agradables y momentos de calma en el hogar, el trabajo o el spa.</p>
+          <p class="texto-suave small mb-0">Nuestros productos son para uso aromático y cosmético; no sustituyen un tratamiento médico.</p>
+        </div>
+        <div class="col-lg-6 offset-lg-1">
+          <div class="beneficio"><div class="icono"><i class="bi bi-moon-stars"></i></div><div><h3 class="h4 mb-1">Momentos de calma</h3><p>Aromas como la lavanda ayudan a crear un ambiente tranquilo antes de dormir.</p></div></div>
+          <div class="beneficio"><div class="icono"><i class="bi bi-sun"></i></div><div><h3 class="h4 mb-1">Energía para el día</h3><p>Los cítricos y la menta aportan una sensación fresca y revitalizante.</p></div></div>
+          <div class="beneficio mb-0"><div class="icono"><i class="bi bi-house-heart"></i></div><div><h3 class="h4 mb-1">Hogar acogedor</h3><p>Una vela encendida transforma cualquier espacio en un rincón especial.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proceso">
+    <div class="container">
+      <img src="img/proceso.jpg" alt="Artesana vertiendo cera en frascos de vidrio" class="w-100 foto-proceso mb-5" loading="lazy">
+      <div class="text-center mb-5">
+        <p class="etiqueta" style="color:var(--rubor)">Nuestro proceso</p>
+        <h2 class="display-5">Hecho a mano, paso a paso</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-6 col-lg-3 paso"><div class="numero">01</div><h3 class="h4 mt-2">Selección</h3><p class="texto-suave small">Elegimos cera de soya, aceites vegetales y esencias de calidad.</p></div>
+        <div class="col-6 col-lg-3 paso"><div class="numero">02</div><h3 class="h4 mt-2">Mezcla</h3><p class="texto-suave small">Combinamos cada aroma a mano, en pequeñas cantidades.</p></div>
+        <div class="col-6 col-lg-3 paso"><div class="numero">03</div><h3 class="h4 mt-2">Reposo</h3><p class="texto-suave small">Las velas y jabones reposan para curar y fijar el aroma.</p></div>
+        <div class="col-6 col-lg-3 paso"><div class="numero">04</div><h3 class="h4 mt-2">Empaque</h3><p class="texto-suave small">Empacamos con materiales reutilizables y una nota escrita a mano.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="personalizados">
+    <div class="container">
+      <div class="personalizado p-0 overflow-hidden">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-6">
+            <img src="img/personalizados.jpg" alt="Mesa de evento con velas y jabones de recuerdo" class="w-100 h-100 foto-evento" loading="lazy">
+          </div>
+          <div class="col-lg-6 d-flex align-items-center">
+            <div class="p-4 p-md-5">
+              <p class="etiqueta">Pedidos personalizados</p>
+              <h2 class="display-6 mb-3">Detalles únicos para sus eventos</h2>
+              <p class="mb-4">Creamos velas y jabones con el nombre, los colores y el aroma que usted elija: recuerdos que sus invitados van a usar y recordar.</p>
+              <div class="mb-4"><span class="chip">Bodas</span><span class="chip">Baby showers</span><span class="chip">Regalos corporativos</span><span class="chip">Cumpleaños</span></div>
+              <a href="#contacto" class="btn btn-lavanda">Cotizar mi pedido</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="pt-0 contacto">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <p class="etiqueta">Contacto</p>
+          <h2 class="display-5 mb-4">Hagamos su pedido</h2>
+          <p class="texto-suave">Escríbanos y le respondemos con el catálogo completo, precios y tiempos de entrega.</p>
+          <p class="mb-2"><i class="bi bi-geo-alt me-2" style="color:var(--lavanda)"></i>Heredia, Costa Rica · Envíos a todo el país</p>
+          <p class="mb-2"><i class="bi bi-whatsapp me-2 text-success"></i>+506 0000-0000</p>
+          <p class="mb-0"><i class="bi bi-instagram me-2" style="color:#c47a76"></i>@luzdelavanda.example</p>
+        </div>
+        <div class="col-lg-7">
+          <form id="formPedido" class="row g-3" novalidate>
+            <div class="col-md-6"><label class="form-label" for="pNombre">Nombre</label><input id="pNombre" class="form-control" required></div>
+            <div class="col-md-6"><label class="form-label" for="pTipo">Me interesa</label><select id="pTipo" class="form-select"><option>Velas aromáticas</option><option>Jabones artesanales</option><option>Pedido personalizado</option><option>Aromatizantes para el carro</option></select></div>
+            <div class="col-12"><label class="form-label" for="pMensaje">Mensaje</label><textarea id="pMensaje" class="form-control" rows="4" placeholder="Cuéntenos qué necesita"></textarea></div>
+            <div class="col-12"><button type="submit" class="btn btn-lavanda w-100">Enviar consulta</button></div>
+            <p id="mensajePedido" class="small text-center mb-0"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <span class="marca-texto text-white">Luz de Lavanda</span>
+          <p class="mt-3 mb-4" style="max-width:340px">Velas y jabones artesanales hechos a mano en Costa Rica.</p>
+          <div class="redes"><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h4 class="h6 text-white mb-3" style="font-family:'Nunito Sans',sans-serif">Productos</h4>
+          <p class="mb-2"><a href="#productos">Velas aromáticas</a></p>
+          <p class="mb-2"><a href="#productos">Jabones artesanales</a></p>
+          <p class="mb-2"><a href="#personalizados">Personalizados</a></p>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h4 class="h6 text-white mb-3" style="font-family:'Nunito Sans',sans-serif">Información</h4>
+          <p class="mb-2"><a href="#aromaterapia">Aromaterapia</a></p>
+          <p class="mb-2"><a href="#contacto">Contacto</a></p>
+        </div>
+      </div>
+      <div class="credito d-flex flex-column flex-md-row justify-content-between gap-2">
+        <span>Luz de Lavanda es una marca ficticia. Proyecto conceptual.</span>
+        <span>Diseño y desarrollo: <a href="../../index.html" class="text-white">tupágina.cr</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("formPedido").addEventListener("submit", e => {
+      e.preventDefault();
+      const nombre = document.getElementById("pNombre").value.trim();
+      const msj = document.getElementById("mensajePedido");
+      if (!nombre) { msj.textContent = "Escriba su nombre para continuar."; msj.style.color = "#b0413e"; return; }
+      msj.style.color = "#5d7350";
+      msj.textContent = "¡Gracias, " + nombre + "! (Demostración: este formulario no envía datos.)";
+    });
+  </script>
+</body>
+</html>

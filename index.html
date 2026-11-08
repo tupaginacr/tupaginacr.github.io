@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño de páginas web en Costa Rica | tupágina.cr</title>
+  <link rel="icon" href="img/icono-ka.svg" type="image/svg+xml">
+  <meta name="description" content="Diseño de páginas web profesionales en Costa Rica para emprendimientos, pymes y empresas. Precios en colones desde ₡85.000, cotizador en línea y acompañamiento en todo el proceso.">
+  <link rel="canonical" href="https://tupaginacr.github.io/">
+  <!-- Datos estructurados para Google (cambiar la URL cuando haya dominio propio; agregar "telephone" cuando haya número) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "tupágina.cr",
+    "description": "Diseño y desarrollo de páginas web para emprendimientos, pymes y empresas en Costa Rica.",
+    "url": "https://tupaginacr.github.io/",
+    "logo": "https://tupaginacr.github.io/img/icono-ka.svg",
+    "image": "https://tupaginacr.github.io/img/compartir.jpg",
+    "email": "contacto.tupaginacr@gmail.com",
+    "priceRange": "₡85.000 - ₡315.000",
+    "currenciesAccepted": "CRC, USD",
+    "areaServed": { "@type": "Country", "name": "Costa Rica" },
+    "address": { "@type": "PostalAddress", "addressLocality": "San José", "addressCountry": "CR" },
+    "knowsAbout": ["Diseño web", "Desarrollo web", "Landing pages", "Tiendas en línea", "Diseño de logos", "SEO"]
+  }
+  </script>
+
+  <!-- ===== Vista previa al compartir (WhatsApp, Facebook, LinkedIn, X) =====
+       IMPORTANTE: cuando tenga dominio propio, cambie "https://tupaginacr.github.io/" por su dominio (ej. https://tupagina.cr/)
+       en og:url y og:image. La imagen está en img/compartir.jpg (1200 x 630). -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="tupágina.cr">
+  <meta property="og:locale" content="es_CR">
+  <meta property="og:title" content="tupágina.cr | Páginas web que generan confianza">
+  <meta property="og:description" content="Diseño y desarrollo de sitios web para emprendimientos, pymes y empresas en Costa Rica. Cotice sin compromiso.">
+  <meta property="og:url" content="https://tupaginacr.github.io/">
+  <meta property="og:image" content="https://tupaginacr.github.io/img/compartir.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="tupágina.cr – Páginas web que generan confianza">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="tupágina.cr | Páginas web que generan confianza">
+  <meta name="twitter:description" content="Diseño y desarrollo de sitios web para emprendimientos, pymes y empresas en Costa Rica.">
+  <meta name="twitter:image" content="https://tupaginacr.github.io/img/compartir.jpg">
+  <meta name="theme-color" content="#0E2340">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Variables de color (cámbielas aquí para cambiar todo el sitio) ===== */
+    :root {
+      --tinta: #0e2340;      /* azul marino oscuro: confianza y seguridad */
+      --verde: #1f7a70;      /* turquesa oscuro: textos y checks sobre fondo claro */
+      --verde-claro: #e3f2ef;
+      --coral: #7fd1c6;      /* turquesa del logo: botones y detalles */
+      --crema: #f5f8fb;      /* blanco azulado: fondo general */
+      --gris: #55657a;
+      --borde: #dbe4ee;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--tinta);
+      background: var(--crema);
+    }
+    h1, h2, h3, .marca {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+    }
+    section { padding: 90px 0; }
+    .etiqueta {
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--verde);
+    }
+    .texto-suave { color: var(--gris); }
+
+    /* ===== Navbar ===== */
+    .navbar { background: rgba(245,248,251,.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--borde); }
+    .navbar .marca { font-size: 1.35rem; color: var(--tinta); }
+    
+    .nav-link { color: var(--tinta) !important; font-weight: 500; }
+    .nav-link:hover { color: var(--verde) !important; }
+
+    /* ===== Botones ===== */
+    .btn-principal {
+      background: var(--coral); color: var(--tinta); border: none;
+      padding: .8rem 1.6rem; border-radius: 50px; font-weight: 600;
+    }
+    .btn-principal:hover { background: #63c3b6; color: var(--tinta); }
+    .btn-borde {
+      border: 2px solid var(--tinta); color: var(--tinta);
+      padding: .7rem 1.5rem; border-radius: 50px; font-weight: 600;
+    }
+    .btn-borde:hover { background: var(--tinta); color: #fff; }
+
+    /* ===== Hero ===== */
+    .hero { padding: 150px 0 90px; }
+    .hero h1 { font-size: clamp(2.3rem, 5vw, 3.8rem); line-height: 1.1; }
+    .hero h1 em { font-style: normal; color: var(--verde); }
+    .hero-tarjeta {
+      background: var(--tinta); color: #fff; border-radius: 24px; padding: 2rem;
+      box-shadow: 0 25px 50px -20px rgba(29,43,54,.5);
+    }
+    .hero-tarjeta .barra { height: 10px; border-radius: 10px; background: rgba(255,255,255,.15); margin-bottom: 12px; }
+    .hero-tarjeta .barra.corta { width: 55%; }
+    .hero-tarjeta .bloque { height: 90px; border-radius: 14px; background: var(--verde); margin: 18px 0; }
+    .hero-tarjeta .mini { height: 60px; border-radius: 12px; background: rgba(255,255,255,.1); }
+    .dato strong { font-family: 'Fraunces', serif; font-size: 1.8rem; display: block; }
+
+    /* ===== Servicios ===== */
+    .servicio {
+      background: #fff; border-radius: 18px; padding: 2rem; height: 100%;
+      border: 1px solid var(--borde); transition: transform .2s, box-shadow .2s;
+    }
+    .servicio:hover { transform: translateY(-4px); box-shadow: 0 15px 30px -15px rgba(0,0,0,.15); }
+    .servicio i {
+      font-size: 1.6rem; color: var(--verde); background: var(--verde-claro);
+      width: 56px; height: 56px; border-radius: 14px;
+      display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1rem;
+    }
+
+    /* ===== Planes ===== */
+    #planes { background: var(--tinta); color: #fff; }
+    #planes .etiqueta { color: #7fd1c6; }
+    #planes .texto-suave { color: #b9c7d8; }
+    .plan {
+      background: #fff; color: var(--tinta); border-radius: 22px; padding: 2.2rem 1.8rem;
+      height: 100%; display: flex; flex-direction: column; position: relative;
+    }
+    .plan.destacado { outline: 4px solid var(--coral); }
+    .plan .insignia {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--coral); color: var(--tinta); font-size: .75rem; font-weight: 600;
+      padding: .35rem 1rem; border-radius: 50px; white-space: nowrap;
+    }
+    .plan .para { font-size: .9rem; color: var(--gris); min-height: 44px; }
+    .plan .precio { font-family: 'Fraunces', serif; font-size: 3rem; line-height: 1; margin: 1rem 0 .2rem; }
+    .plan .precio sup { font-size: 1.2rem; top: -1.3rem; }
+    .plan .nota-precio { font-size: .8rem; color: var(--gris); }
+    .plan ul { list-style: none; padding: 0; margin: 1.5rem 0; flex-grow: 1; }
+    .plan li { padding: .45rem 0; font-size: .93rem; border-bottom: 1px dashed var(--borde); }
+    .plan li i { color: var(--verde); margin-right: .4rem; }
+    .plan li.no { color: #a8afb5; }
+    .plan li.no i { color: #c9ced2; }
+    .extra {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px; padding: 1.3rem 1.5rem; height: 100%;
+    }
+    .extra strong { color: #7fd1c6; }
+
+    /* ===== Proceso ===== */
+    .paso-num {
+      font-family: 'Fraunces', serif; font-size: 2.6rem; color: var(--verde); line-height: 1;
+    }
+
+    /* ===== Portafolio ===== */
+    .proyecto { display: block; border-radius: 20px; overflow: hidden; background: #fff; border: 1px solid var(--borde); height: 100%; text-decoration: none; color: var(--tinta); transition: transform .25s, box-shadow .25s; }
+    .proyecto:hover { transform: translateY(-6px); box-shadow: 0 25px 45px -25px rgba(14,35,64,.35); color: var(--tinta); }
+    .proyecto .miniatura { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--crema); }
+    .proyecto .miniatura img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .proyecto:hover .miniatura img { transform: scale(1.04); }
+    .insignia-concepto { position: absolute; top: 12px; left: 12px; background: rgba(14,35,64,.85); color: #fff; font-size: .72rem; font-weight: 600; padding: .3rem .75rem; border-radius: 50px; }
+    .proyecto .info { padding: 1.4rem; }
+    .proyecto .tipo { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: var(--verde); }
+    .proyecto .ver { font-weight: 600; color: var(--verde); font-size: .9rem; white-space: nowrap; }
+    .chip { display: inline-block; font-size: .75rem; background: var(--verde-claro); color: var(--verde); padding: .2rem .6rem; border-radius: 50px; margin-right: .3rem; }
+
+    /* ===== Nosotros ===== */
+    .foto-marca { max-width: 320px; display: block; margin: 0 auto; filter: drop-shadow(0 20px 25px rgba(14,35,64,.3)); }
+    .valor {
+      background: #fff; border: 1px solid var(--borde); border-radius: 14px;
+      padding: .9rem 1rem; font-weight: 500; display: flex; align-items: center; gap: .7rem; height: 100%;
+    }
+    .valor i { font-size: 1.3rem; color: var(--verde); }
+    .foto {
+      aspect-ratio: 1; border-radius: 50% 50% 24px 24px; background: var(--verde);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-family: 'Fraunces', serif; font-size: 4rem;
+    }
+
+    /* ===== FAQ ===== */
+    .accordion-button { font-weight: 600; }
+    .accordion-button:not(.collapsed) { background: var(--verde-claro); color: var(--verde); box-shadow: none; }
+    .accordion-item { border-radius: 12px !important; overflow: hidden; margin-bottom: .7rem; border: 1px solid var(--borde); }
+
+    /* ===== Contacto ===== */
+    #contacto { background: var(--verde); color: #fff; }
+    #contacto .form-control, #contacto .form-select { border-radius: 12px; padding: .8rem 1rem; }
+    .contacto-dato i { font-size: 1.3rem; margin-right: .7rem; }
+
+    footer { background: var(--tinta); color: #b9c7d8; padding: 70px 0 30px; font-size: .95rem; }
+    .footer-titulo { color: #fff; font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 1.2rem; }
+    .footer-lista { list-style: none; padding: 0; margin: 0; }
+    .footer-lista li { margin-bottom: .65rem; }
+    .footer-lista a { color: #b9c7d8; text-decoration: none; }
+    .footer-lista a:hover { color: var(--coral); }
+    .red-social {
+      width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25);
+      display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; text-decoration: none;
+    }
+    .red-social:hover { background: var(--coral); color: var(--tinta); border-color: var(--coral); }
+    .footer-linea { border-color: rgba(255,255,255,.15); margin: 2.5rem 0 1.2rem; }
+
+
+    /* ===== Por qué una página web ===== */
+    .razon { background: #fff; border: 1px solid var(--borde); border-radius: 18px; padding: 1.4rem; height: 100%; }
+    .razon i { font-size: 1.5rem; color: var(--verde); display: inline-block; margin-bottom: .6rem; }
+    .razon h3 { font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: .35rem; }
+    .razon p { font-size: .9rem; color: var(--gris); margin: 0; }
+
+    /* ===== Paquete logo + página ===== */
+    .paquete { background: linear-gradient(115deg, #7fd1c6, #b9e6df); color: var(--tinta); border-radius: 22px; padding: 1.8rem 2rem; }
+    .paquete h3 { font-family: 'Fraunces', serif; }
+    .paquete .opcion-paquete { background: rgba(255,255,255,.65); border-radius: 16px; padding: 1rem 1.2rem; height: 100%; }
+    .paquete .tachado { text-decoration: line-through; color: #55657a; font-size: .9rem; margin-left: .3rem; }
+    .paquete .ahorro { display: inline-block; background: var(--tinta); color: #fff; font-size: .72rem; font-weight: 600; padding: .2rem .6rem; border-radius: 50px; }
+
+    /* ===== Cotizador ===== */
+    .cotizador-caja { background: #fff; border: 1px solid var(--borde); border-radius: 24px; padding: 2rem; }
+    .paso-cot { display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: var(--tinta); color: #fff; font-size: .85rem; align-items: center; justify-content: center; margin-right: .6rem; font-family: 'Inter', sans-serif; }
+    .opcion { display: block; height: 100%; border: 2px solid var(--borde); border-radius: 16px; padding: 1rem; cursor: pointer; text-align: center; transition: border-color .2s, background .2s; }
+    .opcion i { display: block; font-size: 1.6rem; color: var(--verde); margin-bottom: .3rem; }
+    .opcion strong { display: block; }
+    .opcion span { font-size: .82rem; color: var(--gris); }
+    .btn-check:checked + .opcion { border-color: var(--verde); background: var(--verde-claro); }
+    .btn-check:focus-visible + .opcion { outline: 3px solid var(--coral); }
+    .contador { display: inline-flex; align-items: center; border: 1px solid var(--borde); border-radius: 50px; overflow: hidden; }
+    .contador button { width: 42px; height: 42px; border: none; background: var(--crema); font-size: 1.3rem; color: var(--tinta); }
+    .contador button:hover { background: var(--verde-claro); }
+    .contador span { min-width: 44px; text-align: center; font-weight: 700; }
+    .extra-cot { display: flex; gap: .8rem; align-items: flex-start; border: 1px solid var(--borde); border-radius: 14px; padding: .8rem 1rem; cursor: pointer; height: 100%; }
+    .extra-cot .form-check-input { margin-top: .25rem; flex-shrink: 0; }
+    .extra-cot .form-check-input:checked { background-color: var(--verde); border-color: var(--verde); }
+    .extra-cot strong { display: block; font-size: .93rem; }
+    .extra-cot small { color: var(--gris); }
+    .resumen-cot { background: var(--tinta); color: #fff; border-radius: 24px; padding: 2rem; position: sticky; top: 100px; }
+    .lista-cot { list-style: none; padding: 0; margin: 0 0 1.2rem; font-size: .92rem; }
+    .lista-cot li { display: flex; justify-content: space-between; gap: 1rem; padding: .5rem 0; border-bottom: 1px dashed rgba(255,255,255,.15); color: #c9d5e2; }
+    .lista-cot li b { color: #fff; font-weight: 600; white-space: nowrap; }
+    .total-cot { background: rgba(127,209,198,.12); border-radius: 16px; padding: 1rem 1.2rem; margin-bottom: .8rem; }
+    .total-cot span { display: block; font-size: .85rem; color: #c9d5e2; }
+    .total-cot strong { font-family: 'Fraunces', serif; font-size: 2.3rem; color: #7fd1c6; line-height: 1.1; }
+    .total-cot small { display: block; color: #c9d5e2; }
+    .mensual-cot { display: flex; justify-content: space-between; padding: .3rem .2rem .8rem; color: #c9d5e2; }
+    .mensual-cot strong { color: #fff; }
+    .nota-cot, .entrega-cot { font-size: .88rem; color: #c9d5e2; margin-bottom: .6rem; }
+    .entrega-cot strong { color: #fff; }
+    .aviso-cot { font-size: .78rem; color: #9fb0c4; margin: .8rem 0 0; }
+
+    /* Botón flotante de WhatsApp */
+    .whatsapp {
+      position: fixed; bottom: 22px; right: 22px; z-index: 999;
+      height: 60px; min-width: 60px; padding: 0 18px; border-radius: 60px;
+      background: #25d366; color: #fff; text-decoration: none; font-weight: 600;
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,.25); transition: transform .2s;
+      animation: latido 2.5s infinite;
+    }
+    .whatsapp i { font-size: 1.8rem; }
+    .whatsapp:hover { color: #fff; background: #1ebe5b; transform: scale(1.05); }
+    .whatsapp .texto-wa { display: none; }
+    @media (min-width: 768px) { .whatsapp .texto-wa { display: inline; } }
+    @keyframes latido {
+      0%   { box-shadow: 0 0 0 0 rgba(37,211,102,.55), 0 8px 20px rgba(0,0,0,.25); }
+      70%  { box-shadow: 0 0 0 16px rgba(37,211,102,0), 0 8px 20px rgba(0,0,0,.25); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0), 0 8px 20px rgba(0,0,0,.25); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#inicio"><img src="img/logo-ka-tupagina.svg" alt="KA tu página" height="46"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#planes">Planes y precios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cotizador">Cotizador</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proceso">¿Cómo trabajamos?</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portafolio">Portafolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-principal btn-sm px-3" href="#contacto">Cotizar</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <header class="hero" id="inicio">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <p class="etiqueta mb-3">Diseño y desarrollo web · Costa Rica</p>
+          <h1 class="mb-4">Páginas web que hacen ver a su negocio <em>profesional</em> desde el primer clic.</h1>
+          <p class="lead texto-suave mb-4">
+            Creamos sitios web modernos, rápidos y adaptados a celular para emprendimientos, pymes y empresas.
+            Le acompañamos en todo el proceso, con precios claros y sin letra pequeña.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mb-5">
+            <a href="#planes" class="btn btn-principal">Ver planes y precios</a>
+            <a href="#contacto" class="btn btn-borde">Solicitar cotización</a>
+          </div>
+          <div class="row g-4">
+            <div class="col-4 dato"><strong>100%</strong><span class="texto-suave small">Adaptable a celulares</span></div>
+            <div class="col-4 dato"><strong>1–3</strong><span class="texto-suave small">Semanas de entrega</span></div>
+            <div class="col-4 dato"><strong>1:1</strong><span class="texto-suave small">Atención personalizada</span></div>
+          </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block">
+          <!-- Ilustración simple hecha con CSS; puede reemplazarla por una captura de un proyecto suyo -->
+          <div class="hero-tarjeta">
+            <div class="d-flex gap-2 mb-4">
+              <span class="rounded-circle" style="width:12px;height:12px;background:#7fd1c6"></span>
+              <span class="rounded-circle" style="width:12px;height:12px;background:#ffffff;opacity:.5"></span>
+              <span class="rounded-circle" style="width:12px;height:12px;background:#7fd1c6"></span>
+            </div>
+            <div class="barra"></div>
+            <div class="barra corta"></div>
+            <div class="bloque"></div>
+            <div class="row g-2">
+              <div class="col-4"><div class="mini"></div></div>
+              <div class="col-4"><div class="mini"></div></div>
+              <div class="col-4"><div class="mini"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= POR QUÉ UNA PÁGINA WEB ================= -->
+  <section id="por-que" class="pb-0">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-4">
+          <p class="etiqueta">¿Por qué una página web?</p>
+          <h2 class="mb-3">Las redes sociales no son suficientes</h2>
+          <p class="texto-suave mb-0">Facebook e Instagram son excelentes para conversar con sus clientes, pero una página web le da algo que las redes no pueden: un espacio propio, profesional y siempre disponible.</p>
+        </div>
+        <div class="col-lg-8">
+          <div class="row g-3">
+            <div class="col-sm-6"><div class="razon"><i class="bi bi-shield-check"></i><h3 class="h6">Más confianza</h3><p>Un negocio con página propia se ve serio y establecido. Muchos clientes la buscan antes de comprar o contratar.</p></div></div>
+            <div class="col-sm-6"><div class="razon"><i class="bi bi-search"></i><h3 class="h6">Lo encuentran en Google</h3><p>Cuando alguien busca lo que usted vende en su zona, su página puede aparecer en los resultados.</p></div></div>
+            <div class="col-sm-6"><div class="razon"><i class="bi bi-clock-history"></i><h3 class="h6">Abierta las 24 horas</h3><p>Muestra sus productos, precios y horarios aunque usted esté descansando.</p></div></div>
+            <div class="col-sm-6"><div class="razon"><i class="bi bi-key"></i><h3 class="h6">Es 100 % suya</h3><p>No depende de cambios en las redes ni de cuántas personas vean una publicación.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICIOS ================= -->
+  <section id="servicios">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="etiqueta">Servicios</p>
+        <h2>¿En qué le podemos ayudar?</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="servicio">
+            <i class="bi bi-window-sidebar"></i>
+            <h3 class="h5">Diseño de sitios web</h3>
+            <p class="texto-suave mb-0">Sitios profesionales a la medida de su marca, adaptados a celular, tableta y computadora.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="servicio">
+            <i class="bi bi-rocket-takeoff"></i>
+            <h3 class="h5">Landing pages</h3>
+            <p class="texto-suave mb-0">Una sola página enfocada en vender un producto, servicio o promoción.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="servicio">
+            <i class="bi bi-bag-check"></i>
+            <h3 class="h5">Tiendas en línea</h3>
+            <p class="texto-suave mb-0">Catálogos con pedidos por WhatsApp o tiendas con pagos en línea (se cotiza aparte).</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="servicio">
+            <i class="bi bi-arrow-repeat"></i>
+            <h3 class="h5">Rediseño de sitios web</h3>
+            <p class="texto-suave mb-0">Le damos una cara nueva a su página actual para que se vea moderna y cargue más rápido.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="servicio">
+            <i class="bi bi-search"></i>
+            <h3 class="h5">Optimización SEO</h3>
+            <p class="texto-suave mb-0">Estructura, títulos y descripciones optimizadas para que Google encuentre su negocio.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="servicio">
+            <i class="bi bi-tools"></i>
+            <h3 class="h5">Mantenimiento de sitios web</h3>
+            <p class="texto-suave mb-0">Cambios de textos, fotos, precios y promociones cada mes, sin que usted se preocupe.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="servicio">
+            <i class="bi bi-vector-pen"></i>
+            <h3 class="h5">Diseño de logos</h3>
+            <p class="texto-suave mb-0">Un logo original y profesional que represente la identidad de su negocio.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="servicio">
+            <i class="bi bi-palette"></i>
+            <h3 class="h5">Diseño gráfico</h3>
+            <p class="texto-suave mb-0">Artes para redes sociales, tarjetas de presentación, afiches y material publicitario.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="servicio">
+            <i class="bi bi-phone"></i>
+            <h3 class="h5">Diseño responsive</h3>
+            <p class="texto-suave mb-0">Todos nuestros sitios se ven y funcionan bien en cualquier dispositivo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PLANES ================= -->
+  <section id="planes">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="etiqueta">Planes y precios</p>
+        <h2>Un plan para cada etapa de su negocio</h2>
+        <p class="texto-suave mx-auto" style="max-width:600px">Pago único por la creación del sitio. Precios en colones. El monto en dólares es aproximado y puede variar según el tipo de cambio.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Plan 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="plan">
+            <h3 class="h4 mb-1">Emprende</h3>
+            <p class="para">Ideal para emprendedores que necesitan presencia en internet ya.</p>
+            <div class="precio"><sup>₡</sup>85.000</div>
+            <span class="nota-precio">aprox. $185 · pago único</span>
+            <ul>
+              <li><i class="bi bi-check-circle-fill"></i>Landing page (1 página con secciones)</li>
+              <li><i class="bi bi-check-circle-fill"></i>Adaptable a celular y tableta</li>
+              <li><i class="bi bi-check-circle-fill"></i>Botón de WhatsApp</li>
+              <li><i class="bi bi-check-circle-fill"></i>Enlaces a redes sociales</li>
+              <li><i class="bi bi-check-circle-fill"></i>Mapa de ubicación (Google Maps)</li>
+              <li><i class="bi bi-check-circle-fill"></i>1 ronda de cambios</li>
+              <li><i class="bi bi-check-circle-fill"></i>Manual de uso</li>
+              <li class="no"><i class="bi bi-x-circle"></i>Formulario de contacto</li>
+              <li class="no"><i class="bi bi-x-circle"></i>Galería / Blog</li>
+            </ul>
+            <a href="#contacto" class="btn btn-borde w-100">Quiero este plan</a>
+          </div>
+        </div>
+
+        <!-- Plan 2 (destacado) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="plan destacado">
+            <span class="insignia">Más solicitado</span>
+            <h3 class="h4 mb-1">Pyme</h3>
+            <p class="para">Para negocios pequeños y medianos que quieren verse profesionales.</p>
+            <div class="precio"><sup>₡</sup>175.000</div>
+            <span class="nota-precio">aprox. $385 · pago único</span>
+            <ul>
+              <li><i class="bi bi-check-circle-fill"></i>Sitio de hasta <strong>5 páginas</strong></li>
+              <li><i class="bi bi-check-circle-fill"></i>Adaptable a celular y tableta</li>
+              <li><i class="bi bi-check-circle-fill"></i>Formulario de contacto</li>
+              <li><i class="bi bi-check-circle-fill"></i>Galería de fotos / productos</li>
+              <li><i class="bi bi-check-circle-fill"></i>Botón de WhatsApp y redes</li>
+              <li><i class="bi bi-check-circle-fill"></i>SEO básico inicial</li>
+              <li><i class="bi bi-check-circle-fill"></i>2 rondas de cambios</li>
+              <li><i class="bi bi-check-circle-fill"></i>Manual de uso + 1 mes de soporte gratis</li>
+            </ul>
+            <a href="#contacto" class="btn btn-principal w-100">Quiero este plan</a>
+          </div>
+        </div>
+
+        <!-- Plan 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="plan">
+            <h3 class="h4 mb-1">Empresa</h3>
+            <p class="para">Para empresas que necesitan un sitio más completo y con más contenido.</p>
+            <div class="precio"><sup>₡</sup>315.000</div>
+            <span class="nota-precio">aprox. $690 · pago único</span>
+            <ul>
+              <li><i class="bi bi-check-circle-fill"></i>Sitio de hasta <strong>10 páginas</strong></li>
+              <li><i class="bi bi-check-circle-fill"></i>Todo lo del plan Pyme</li>
+              <li><i class="bi bi-check-circle-fill"></i>Sección de blog / noticias</li>
+              <li><i class="bi bi-check-circle-fill"></i>Catálogo de servicios o productos</li>
+              <li><i class="bi bi-check-circle-fill"></i>Integración con Google Analytics</li>
+              <li><i class="bi bi-check-circle-fill"></i>Ayuda con dominio y hosting</li>
+              <li><i class="bi bi-check-circle-fill"></i>3 rondas de cambios</li>
+              <li><i class="bi bi-check-circle-fill"></i>Manual de uso + 2 meses de soporte gratis</li>
+            </ul>
+            <a href="#contacto" class="btn btn-borde w-100">Quiero este plan</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Servicios adicionales -->
+      <div class="row g-3 mt-5">
+        <div class="col-md-4">
+          <div class="extra">
+            <strong>Mantenimiento mensual</strong>
+            <p class="mb-0 mt-1">Desde <b>₡16.000/mes</b> (aprox. $35) · hasta 4 cambios de contenido al mes.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="extra">
+            <strong>Página adicional</strong>
+            <p class="mb-0 mt-1"><b>₡18.000</b> (aprox. $40) por cada página extra a su plan.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="extra">
+            <strong>Rediseño de sitio existente</strong>
+            <p class="mb-0 mt-1">Desde <b>₡115.000</b> (aprox. $250) · cotización según el tamaño.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Paquete Logo + Página (si cambia precios, cámbielos también en PRECIOS.descuentoLogo del cotizador) -->
+      <div class="paquete mt-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-4">
+            <span class="ahorro mb-2">Paquete de arranque</span>
+            <h3 class="h3 mb-2">Logo + Página web</h3>
+            <p class="mb-0">¿Está empezando su negocio? Llévese su identidad y su página juntas, con descuento.</p>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="opcion-paquete">
+              <strong>Logo + Landing page</strong>
+              <div class="fs-4 fw-bold">₡110.000 <span class="tachado">₡120.000</span></div>
+              <small>Aprox. $242 · ahorra ₡10.000</small>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="opcion-paquete">
+              <strong>Logo + Sitio Pyme</strong>
+              <div class="fs-4 fw-bold">₡195.000 <span class="tachado">₡210.000</span></div>
+              <small>Aprox. $429 · ahorra ₡15.000</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="texto-suave small text-center mt-4 mb-0">
+        * El dominio (.com / .cr) y el hosting los paga el cliente directamente al proveedor, así el sitio queda 100% a su nombre.
+        Se solicita un 50% de adelanto para iniciar y el 50% restante al entregar.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= COTIZADOR ================= -->
+  <!-- Los precios del cotizador se cambian en el script, en el objeto PRECIOS (al final del archivo). -->
+  <section id="cotizador">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="etiqueta">Cotizador</p>
+        <h2>Calcule el precio de su página</h2>
+        <p class="texto-suave mx-auto" style="max-width:600px">Marque lo que necesita y vea al instante un precio aproximado. Luego envíenos su cotización por WhatsApp.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="cotizador-caja">
+            <h3 class="h5 mb-3"><span class="paso-cot">1</span>¿Qué tipo de sitio necesita?</h3>
+            <div class="row g-3 mb-4">
+              <div class="col-md-4"><input type="radio" class="btn-check" name="cTipo" id="cTipo1" value="emprende" checked><label class="opcion" for="cTipo1"><i class="bi bi-file-earmark"></i><strong>Landing page</strong><span>1 página con secciones</span></label></div>
+              <div class="col-md-4"><input type="radio" class="btn-check" name="cTipo" id="cTipo2" value="pyme"><label class="opcion" for="cTipo2"><i class="bi bi-files"></i><strong>Sitio Pyme</strong><span>Hasta 5 páginas</span></label></div>
+              <div class="col-md-4"><input type="radio" class="btn-check" name="cTipo" id="cTipo3" value="empresa"><label class="opcion" for="cTipo3"><i class="bi bi-building"></i><strong>Sitio Empresa</strong><span>Hasta 10 páginas</span></label></div>
+            </div>
+
+            <h3 class="h5 mb-3"><span class="paso-cot">2</span>¿Necesita páginas adicionales?</h3>
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="contador">
+                <button type="button" id="cMenos" aria-label="Quitar una página">−</button>
+                <span id="cPaginas">0</span>
+                <button type="button" id="cMas" aria-label="Agregar una página">+</button>
+              </div>
+              <span class="texto-suave small">páginas extra (<span id="cPrecioPagina"></span> c/u)</span>
+            </div>
+
+            <h3 class="h5 mb-3"><span class="paso-cot">3</span>Extras</h3>
+            <div class="row g-2 mb-4" id="cExtras">
+              <div class="col-md-6"><label class="extra-cot"><input type="checkbox" class="form-check-input" value="catalogo"><span><strong>Catálogo con pedidos por WhatsApp</strong><small id="pc-catalogo"></small></span></label></div>
+              <div class="col-md-6"><label class="extra-cot"><input type="checkbox" class="form-check-input" value="tienda"><span><strong>Tienda con pagos en línea</strong><small>Se cotiza aparte</small></span></label></div>
+              <div class="col-md-6"><label class="extra-cot"><input type="checkbox" class="form-check-input" value="logo"><span><strong>Diseño de logo</strong><small id="pc-logo"></small></span></label></div>
+              <div class="col-md-6"><label class="extra-cot"><input type="checkbox" class="form-check-input" value="redes"><span><strong>5 artes para redes sociales</strong><small id="pc-redes"></small></span></label></div>
+              <div class="col-md-6"><label class="extra-cot"><input type="checkbox" class="form-check-input" value="blog" id="cBlog"><span><strong>Blog o sección de noticias</strong><small id="pc-blog"></small></span></label></div>
+              <div class="col-md-6"><label class="extra-cot"><input type="checkbox" class="form-check-input" value="textos"><span><strong>Redacción de textos</strong><small id="pc-textos"></small></span></label></div>
+            </div>
+
+            <h3 class="h5 mb-3"><span class="paso-cot">4</span>Después de entregar</h3>
+            <label class="extra-cot"><input type="checkbox" class="form-check-input" id="cMantenimiento"><span><strong>Mantenimiento mensual</strong><small id="pc-mant"></small></span></label>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="resumen-cot">
+            <p class="etiqueta mb-2" style="color:#7fd1c6">Su cotización aproximada</p>
+            <ul class="lista-cot" id="cLista"></ul>
+            <div class="total-cot">
+              <span>Total pago único</span>
+              <strong id="cTotal">₡0</strong>
+              <small id="cDolares"></small>
+            </div>
+            <div class="mensual-cot" id="cMensualCaja"><span>Mantenimiento</span><strong id="cMensual"></strong></div>
+            <p class="nota-cot" id="cNotaTienda"><i class="bi bi-info-circle"></i> La tienda con pagos en línea se cotiza aparte según la cantidad de productos.</p>
+            <p class="entrega-cot"><i class="bi bi-calendar-check"></i> Entrega estimada: <strong id="cEntrega"></strong></p>
+            <button type="button" class="btn btn-principal w-100 mt-2" id="cEnviar"><i class="bi bi-whatsapp me-2"></i>Enviar mi cotización</button>
+            <p class="aviso-cot">Precio aproximado. La cotización final depende del contenido y se confirma antes de iniciar. Vea nuestra <a href="politica-privacidad.html" style="color:#7fd1c6">política de privacidad</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROCESO ================= -->
+  <section id="proceso">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="etiqueta">¿Cómo trabajamos?</p>
+        <h2>Un proceso simple y transparente</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="paso-num">01</div>
+          <h3 class="h5 mt-2">Conversamos</h3>
+          <p class="texto-suave">Nos cuenta sobre su negocio, sus clientes y lo que necesita. Sin costo.</p>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="paso-num">02</div>
+          <h3 class="h5 mt-2">Propuesta</h3>
+          <p class="texto-suave">Le enviamos una cotización clara y un boceto del diseño para su aprobación.</p>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="paso-num">03</div>
+          <h3 class="h5 mt-2">Desarrollo</h3>
+          <p class="texto-suave">Construimos el sitio y le mostramos avances para que haga sus observaciones.</p>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="paso-num">04</div>
+          <h3 class="h5 mt-2">Publicación</h3>
+          <p class="texto-suave">Publicamos su página, le entregamos un manual de uso y le explicamos cómo funciona.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PORTAFOLIO ================= -->
+  <!-- Proyectos conceptuales: marcas ficticias creadas para mostrar nuestro trabajo. Cuando haya clientes reales, agregarlos aquí. -->
+  <section id="portafolio" style="background:#fff">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="etiqueta">Portafolio</p>
+        <h2>Diseños de muestra</h2>
+        <p class="texto-suave mx-auto" style="max-width:600px">Proyectos conceptuales creados por nuestro equipo para distintos tipos de negocio. Haga clic para ver cada sitio completo.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <a class="proyecto" href="proyectos/grano-de-oro/index.html" target="_blank">
+            <div class="miniatura"><img src="img/portafolio-grano-de-oro.jpg" alt="Diseño del sitio Grano de Oro" loading="lazy"><span class="insignia-concepto">Proyecto conceptual</span></div>
+            <div class="info">
+              <p class="tipo mb-1">Tostaduría de café</p>
+              <h3 class="h5 mb-2">Grano de Oro</h3>
+              <p class="texto-suave small mb-3">Sitio para una tostaduría costarricense: catálogo de cafés, historia, recetas y registro al club.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div><span class="chip">Bootstrap</span><span class="chip">HTML5</span><span class="chip">CSS3</span></div>
+                <span class="ver">Ver <i class="bi bi-arrow-up-right"></i></span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="proyecto" href="proyectos/selva-y-mar/index.html" target="_blank">
+            <div class="miniatura"><img src="img/portafolio-selva-y-mar.jpg" alt="Diseño del sitio Selva y Mar Tours" loading="lazy"><span class="insignia-concepto">Proyecto conceptual</span></div>
+            <div class="info">
+              <p class="tipo mb-1">Turismo</p>
+              <h3 class="h5 mb-2">Selva y Mar Tours</h3>
+              <p class="texto-suave small mb-3">Sitio para una empresa de tours en Manuel Antonio: tours con precios, playas y formulario de reservas.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div><span class="chip">Bootstrap</span><span class="chip">HTML5</span><span class="chip">JavaScript</span></div>
+                <span class="ver">Ver <i class="bi bi-arrow-up-right"></i></span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="proyecto" href="proyectos/luz-de-lavanda/index.html" target="_blank">
+            <div class="miniatura"><img src="img/portafolio-luz-de-lavanda.jpg" alt="Diseño del sitio Luz de Lavanda" loading="lazy"><span class="insignia-concepto">Proyecto conceptual</span></div>
+            <div class="info">
+              <p class="tipo mb-1">Emprendimiento artesanal</p>
+              <h3 class="h5 mb-2">Luz de Lavanda</h3>
+              <p class="texto-suave small mb-3">Tienda para velas y jabones artesanales: categorías, productos, pedidos personalizados y contacto.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div><span class="chip">Bootstrap</span><span class="chip">HTML5</span><span class="chip">CSS3</span></div>
+                <span class="ver">Ver <i class="bi bi-arrow-up-right"></i></span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NOSOTROS ================= -->
+  <section id="nosotros">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-md-5 col-lg-4">
+          <img src="img/icono-ka.svg" class="w-100 foto-marca" alt="tupágina.cr">
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <p class="etiqueta">Nosotros</p>
+          <h2 class="mb-4">Diseñamos páginas web que generan confianza</h2>
+          <p class="texto-suave">
+            En <strong>tupágina.cr</strong> creamos páginas web profesionales y avanzadas para emprendimientos,
+            pymes y empresas de todo Costa Rica. Nos apasiona el buen diseño y la tecnología, y los combinamos
+            para que cada negocio tenga un sitio moderno, seguro y fácil de usar.
+          </p>
+          <p class="texto-suave">
+            Acompañamos a cada cliente desde la primera conversación hasta la publicación de su sitio, y también después:
+            entregamos un manual de uso y respondemos sus dudas a la brevedad posible.
+          </p>
+          <div class="row g-3 mt-2">
+            <div class="col-sm-6"><div class="valor"><i class="bi bi-people"></i>Acompañamiento en todo el proceso</div></div>
+            <div class="col-sm-6"><div class="valor"><i class="bi bi-journal-text"></i>Manual de uso incluido</div></div>
+            <div class="col-sm-6"><div class="valor"><i class="bi bi-lightning-charge"></i>Respuesta rápida a sus dudas</div></div>
+            <div class="col-sm-6"><div class="valor"><i class="bi bi-shield-check"></i>Sitios seguros y a la medida</div></div>
+          </div>
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Bootstrap</span>
+            <span class="chip">JavaScript</span><span class="chip">C# / ASP.NET</span><span class="chip">SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PREGUNTAS FRECUENTES ================= -->
+  <section id="faq" style="background:#fff">
+    <div class="container" style="max-width:800px">
+      <div class="text-center mb-5">
+        <p class="etiqueta">Preguntas frecuentes</p>
+        <h2>Lo que más nos preguntan</h2>
+      </div>
+      <div class="accordion" id="preguntas">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#p1">¿Cuánto tarda en estar lista mi página?</button>
+          </h3>
+          <div id="p1" class="accordion-collapse collapse show" data-bs-parent="#preguntas">
+            <div class="accordion-body texto-suave">Una landing page entre 5 y 7 días hábiles; un sitio Pyme o Empresa entre 2 y 3 semanas, según qué tan rápido me envíe los textos y fotos.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p2">¿El precio incluye dominio y hosting?</button>
+          </h3>
+          <div id="p2" class="accordion-collapse collapse" data-bs-parent="#preguntas">
+            <div class="accordion-body texto-suave">No. Se contratan a nombre suyo para que el sitio sea completamente de su propiedad. Nosotros le ayudamos a escoger y configurar un proveedor según su presupuesto.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p3">¿Cómo se realiza el pago?</button>
+          </h3>
+          <div id="p3" class="accordion-collapse collapse" data-bs-parent="#preguntas">
+            <div class="accordion-body texto-suave">50% de adelanto para iniciar y 50% al entregar. Aceptamos SINPE Móvil y transferencia bancaria, en colones o dólares.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p4">¿Qué necesito tener listo?</button>
+          </h3>
+          <div id="p4" class="accordion-collapse collapse" data-bs-parent="#preguntas">
+            <div class="accordion-body texto-suave">Su logo, los textos básicos de su negocio y fotos de sus productos o servicios. Si no tiene algo, le orientamos para prepararlo.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p5">¿Hacen tiendas en línea?</button>
+          </h3>
+          <div id="p5" class="accordion-collapse collapse" data-bs-parent="#preguntas">
+            <div class="accordion-body texto-suave">Para catálogos con pedidos por WhatsApp, sí. Para tiendas con pagos en línea, escríbanos y lo cotizamos aparte.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p6">¿Qué pasa después de que entregan mi página?</button>
+          </h3>
+          <div id="p6" class="accordion-collapse collapse" data-bs-parent="#preguntas">
+            <div class="accordion-body texto-suave">Le entregamos un manual de uso sencillo y seguimos disponibles para resolver sus dudas a la brevedad posible. Los planes Pyme y Empresa incluyen soporte gratuito, y luego puede contratar el mantenimiento mensual.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACTO ================= -->
+  <section id="contacto">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <p class="etiqueta" style="color:#cdeee9">Contacto</p>
+          <h2 class="mb-4">¿Hablamos de su proyecto?</h2>
+          <p class="mb-4" style="color:#e3f2ef">Cuéntenos qué necesita y le respondemos en menos de 24 horas con una cotización sin compromiso.</p>
+          <p class="contacto-dato"><i class="bi bi-whatsapp"></i>+506 0000-0000</p>
+          <p class="contacto-dato"><i class="bi bi-envelope"></i>contacto.tupaginacr@gmail.com</p>
+          <p class="contacto-dato"><i class="bi bi-geo-alt"></i>San José, Costa Rica</p>
+        </div>
+        <div class="col-lg-7">
+          <!-- El formulario arma un mensaje y lo abre en WhatsApp (no necesita servidor) -->
+          <form id="formContacto" class="bg-white text-dark p-4 p-md-5" style="border-radius:22px">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required>
+              </div>
+              <div class="col-md-6">
+                <label for="negocio" class="form-label">Negocio o empresa</label>
+                <input type="text" class="form-control" id="negocio">
+              </div>
+              <div class="col-12">
+                <label for="plan" class="form-label">Plan de interés</label>
+                <select class="form-select" id="plan">
+                  <option>Emprende (₡85.000)</option>
+                  <option selected>Pyme (₡175.000)</option>
+                  <option>Empresa (₡315.000)</option>
+                  <option>Mantenimiento mensual</option>
+                  <option>Rediseño</option>
+                  <option>No estoy seguro/a</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="mensaje" class="form-label">Cuéntenos sobre su proyecto</label>
+                <textarea class="form-control" id="mensaje" rows="4"></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-principal w-100"><i class="bi bi-whatsapp me-2"></i>Enviar por WhatsApp</button>
+                <p class="small text-muted text-center mt-2 mb-0">Al enviar acepta nuestra <a href="politica-privacidad.html" style="color:var(--verde)">política de privacidad</a>.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <img src="img/logo-ka-tupagina-blanco.svg" alt="tupágina.cr" height="52" class="mb-4">
+          <p class="mb-1">San José, Costa Rica</p>
+          <p class="mb-4">contacto.tupaginacr@gmail.com</p>
+          <a href="#contacto" class="btn btn-principal btn-sm px-4">Contáctenos</a>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h4 class="footer-titulo">Servicios</h4>
+          <ul class="footer-lista">
+            <li><a href="#servicios">Diseño de sitios web</a></li>
+            <li><a href="#servicios">Landing pages</a></li>
+            <li><a href="#servicios">Tiendas en línea</a></li>
+            <li><a href="#servicios">Rediseño de sitios web</a></li>
+            <li><a href="#servicios">Optimización SEO</a></li>
+            <li><a href="#servicios">Mantenimiento web</a></li>
+            <li><a href="#servicios">Diseño de logos</a></li>
+            <li><a href="#servicios">Diseño gráfico</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h4 class="footer-titulo">Enlaces rápidos</h4>
+          <ul class="footer-lista">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#planes">Planes y precios</a></li>
+            <li><a href="#cotizador">Cotizador</a></li>
+            <li><a href="#proceso">¿Cómo trabajamos?</a></li>
+            <li><a href="#portafolio">Portafolio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="politica-privacidad.html">Política de privacidad</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h4 class="footer-titulo">Redes sociales</h4>
+          <!-- Cambie el # por el enlace de cada red cuando cree las cuentas -->
+          <div class="d-flex gap-3">
+            <a href="#" class="red-social" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="red-social" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-linea">
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2 small">
+        <span>© <span id="anio"></span> tupágina.cr · Diseño y desarrollo web · <a href="politica-privacidad.html" style="color:#b9c7d8">Política de privacidad</a></span>
+        <span>Hecho en Costa Rica</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp: cambie 50600000000 por su número (506 + 8 dígitos, sin espacios) -->
+  <a href="https://wa.me/50600000000" class="whatsapp" target="_blank" aria-label="Escribir por WhatsApp"><i class="bi bi-whatsapp"></i><span class="texto-wa">¿Hablamos?</span></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ===== Cambie aquí su número de WhatsApp =====
+    const NUMERO_WHATSAPP = "50600000000";
+
+    document.getElementById("anio").textContent = new Date().getFullYear();
+
+    // Cierra el menú en celular al tocar un enlace
+    document.querySelectorAll("#menu .nav-link, #menu .btn").forEach(enlace => {
+      enlace.addEventListener("click", () => {
+        const menu = document.getElementById("menu");
+        if (menu.classList.contains("show")) bootstrap.Collapse.getOrCreateInstance(menu).hide();
+      });
+    });
+
+    // Formulario -> mensaje de WhatsApp
+    document.getElementById("formContacto").addEventListener("submit", e => {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value.trim();
+      const negocio = document.getElementById("negocio").value.trim();
+      const plan = document.getElementById("plan").value;
+      const mensaje = document.getElementById("mensaje").value.trim();
+
+      const texto = `Hola tupágina.cr, soy ${nombre}${negocio ? " de " + negocio : ""}.\n` +
+                    `Me interesa: ${plan}.\n${mensaje}`;
+      window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
+    });
+
+    // ===== Cotizador =====
+    // Cambie aquí los precios (en colones). TIPO_CAMBIO es solo para mostrar el aproximado en dólares.
+    const PRECIOS = {
+      tipos: {
+        emprende: { nombre: "Landing page (plan Emprende)", precio: 85000, semanas: "1 semana" },
+        pyme:     { nombre: "Sitio Pyme (hasta 5 páginas)", precio: 175000, semanas: "2 a 3 semanas" },
+        empresa:  { nombre: "Sitio Empresa (hasta 10 páginas)", precio: 315000, semanas: "3 a 4 semanas" }
+      },
+      paginaExtra: 18000,
+      extras: {
+        catalogo: { nombre: "Catálogo con pedidos por WhatsApp", precio: 45000 },
+        tienda:   { nombre: "Tienda con pagos en línea", precio: 0 },
+        logo:     { nombre: "Diseño de logo", precio: 35000 },
+        redes:    { nombre: "5 artes para redes sociales", precio: 20000 },
+        blog:     { nombre: "Blog o sección de noticias", precio: 25000 },
+        textos:   { nombre: "Redacción de textos", precio: 25000 }
+      },
+      descuentoLogo: { emprende: 10000, pyme: 15000, empresa: 15000 },
+      mantenimiento: 16000,
+      TIPO_CAMBIO: 455
+    };
+    const colones = n => (n < 0 ? "−" : "") + "₡" + Math.abs(n).toLocaleString("es-CR").replace(/\u00a0|\s/g, ".").replace(/,/g, ".");
+    const cot = { paginas: 0 };
+    document.getElementById("cPrecioPagina").textContent = colones(PRECIOS.paginaExtra);
+    ["catalogo","logo","redes","blog","textos"].forEach(k => document.getElementById("pc-" + k).textContent = "+ " + colones(PRECIOS.extras[k].precio));
+    document.getElementById("pc-mant").textContent = colones(PRECIOS.mantenimiento) + " por mes · hasta 4 cambios";
+
+    function calcular() {
+      const tipo = document.querySelector('input[name="cTipo"]:checked').value;
+      const blog = document.getElementById("cBlog");
+      if (tipo === "empresa") { blog.checked = false; blog.disabled = true; blog.closest(".extra-cot").style.opacity = .5; document.getElementById("pc-blog").textContent = "Incluido en el plan Empresa"; }
+      else { blog.disabled = false; blog.closest(".extra-cot").style.opacity = 1; document.getElementById("pc-blog").textContent = "+ " + colones(PRECIOS.extras.blog.precio); }
+
+      const lineas = [[PRECIOS.tipos[tipo].nombre, PRECIOS.tipos[tipo].precio]];
+      if (cot.paginas > 0) lineas.push([cot.paginas + " página(s) adicional(es)", cot.paginas * PRECIOS.paginaExtra]);
+      let tienda = false;
+      document.querySelectorAll("#cExtras input:checked").forEach(c => {
+        if (c.value === "tienda") { tienda = true; return; }
+        lineas.push([PRECIOS.extras[c.value].nombre, PRECIOS.extras[c.value].precio]);
+      });
+      if (document.querySelector('#cExtras input[value="logo"]').checked) lineas.push(["Descuento paquete logo + página", -PRECIOS.descuentoLogo[tipo]]);
+      const total = lineas.reduce((t, l) => t + l[1], 0);
+      document.getElementById("cLista").innerHTML = lineas.map(l => `<li><span>${l[0]}</span><b>${colones(l[1])}</b></li>`).join("");
+      document.getElementById("cTotal").textContent = colones(total);
+      document.getElementById("cDolares").textContent = "Aprox. $" + Math.round(total / PRECIOS.TIPO_CAMBIO).toLocaleString("en-US");
+      const mant = document.getElementById("cMantenimiento").checked;
+      document.getElementById("cMensualCaja").style.display = mant ? "flex" : "none";
+      document.getElementById("cMensual").textContent = colones(PRECIOS.mantenimiento) + " / mes";
+      document.getElementById("cNotaTienda").style.display = tienda ? "block" : "none";
+      document.getElementById("cEntrega").textContent = PRECIOS.tipos[tipo].semanas + (cot.paginas > 3 || tienda ? " (puede variar)" : "");
+      cot.resumen = { lineas, total, mant, tienda };
+    }
+    document.querySelectorAll('#cotizador input').forEach(i => i.addEventListener("change", calcular));
+    document.getElementById("cMas").addEventListener("click", () => { if (cot.paginas < 20) cot.paginas++; document.getElementById("cPaginas").textContent = cot.paginas; calcular(); });
+    document.getElementById("cMenos").addEventListener("click", () => { if (cot.paginas > 0) cot.paginas--; document.getElementById("cPaginas").textContent = cot.paginas; calcular(); });
+    document.getElementById("cEnviar").addEventListener("click", () => {
+      const r = cot.resumen;
+      let texto = "Hola tupágina.cr, hice una cotización en su página:\n" + r.lineas.map(l => "• " + l[0] + ": " + colones(l[1])).join("\n");
+      texto += "\nTotal aproximado: " + colones(r.total);
+      if (r.mant) texto += "\nMantenimiento mensual: " + colones(PRECIOS.mantenimiento);
+      if (r.tienda) texto += "\nTambién me interesa una tienda con pagos en línea.";
+      window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
+    });
+    calcular();
+  </script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selva y Mar Tours | Tours en Manuel Antonio, Costa Rica</title>
+  <meta name="description" content="Proyecto conceptual de tupágina.cr: sitio web para una empresa de tours en Manuel Antonio.">
+  <!-- Vista previa al compartir: cambiar "https://tupaginacr.github.io/" por el dominio propio cuando exista -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CR">
+  <meta property="og:title" content="Selva y Mar Tours | Proyecto conceptual de tupágina.cr">
+  <meta property="og:description" content="Sitio web conceptual para una empresa de tours en Manuel Antonio. Diseño y desarrollo: tupágina.cr.">
+  <meta property="og:url" content="https://tupaginacr.github.io/proyectos/selva-y-mar/">
+  <meta property="og:image" content="https://tupaginacr.github.io/img/portafolio-selva-y-mar.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b4f5c'/%3E%3Ccircle cx='40' cy='24' r='9' fill='%23f6a54c'/%3E%3Cpath d='M0 46q16-10 32 0t32 0v18H0z' fill='%235fc4c0'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --oceano: #0b4f5c;
+      --oceano-osc: #073640;
+      --turquesa: #5fc4c0;
+      --selva: #2f6b45;
+      --arena: #f6eedf;
+      --atardecer: #f6a54c;
+      --coral: #ef7458;
+      --tinta: #12313a;
+      --gris: #5c6f74;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--tinta); background: #fffdf9; }
+    h1, h2, h3, h4, .marca-texto { font-family: 'Outfit', sans-serif; font-weight: 700; }
+    section { padding: 100px 0; }
+    .etiqueta { text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 600; color: var(--coral); }
+    .texto-suave { color: var(--gris); }
+
+    .aviso-concepto { background: var(--oceano-osc); color: #cfe9e8; font-size: .82rem; text-align: center; padding: .45rem 1rem; }
+    .aviso-concepto a { color: var(--atardecer); font-weight: 600; }
+
+    .navbar { position: absolute; top: 34px; left: 0; right: 0; z-index: 10; padding: 1.1rem 0; }
+    .navbar .nav-link { color: #fff !important; font-weight: 500; }
+    .navbar .nav-link:hover { color: var(--atardecer) !important; }
+    .marca { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: #fff; }
+    .marca-texto { font-size: 1.4rem; line-height: 1; }
+    .marca-texto small { display: block; font-family: 'Inter', sans-serif; font-weight: 500; font-size: .66rem; letter-spacing: .2em; color: var(--turquesa); margin-top: .2rem; }
+    @media (max-width: 575px) { .navbar { top: 52px; } }
+    @media (max-width: 991px) { .navbar-collapse { background: var(--oceano-osc); border-radius: 16px; padding: 1rem; margin-top: .8rem; } }
+
+    .btn-sol { background: var(--atardecer); color: var(--tinta); font-weight: 600; border-radius: 50px; padding: .85rem 1.8rem; border: none; }
+    .btn-sol:hover { background: #ffbd6e; color: var(--tinta); }
+    .btn-blanco { border: 1.5px solid rgba(255,255,255,.8); color: #fff; border-radius: 50px; padding: .8rem 1.7rem; font-weight: 600; }
+    .btn-blanco:hover { background: #fff; color: var(--oceano); }
+
+    .hero { position: relative; color: #fff; min-height: 720px; display: flex; align-items: center; overflow: hidden; background: var(--oceano); }
+    .hero-paisaje { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .hero-velo { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,54,64,.88) 0%, rgba(7,54,64,.6) 45%, rgba(7,54,64,.1) 80%), linear-gradient(0deg, rgba(7,54,64,.35), transparent 40%); }
+    @media (max-width: 767px) { .hero-velo { background: rgba(7,54,64,.72); } }
+    .hero .container { position: relative; z-index: 2; padding-top: 110px; padding-bottom: 90px; }
+    .hero h1 { font-size: clamp(2.8rem, 6vw, 4.8rem); line-height: 1.02; font-weight: 800; }
+    .hero h1 span { color: var(--atardecer); }
+    .hero p.lead { max-width: 520px; color: #e2f3f2; }
+
+    .buscador { background: #fff; border-radius: 22px; padding: 1.2rem; box-shadow: 0 25px 50px -20px rgba(7,54,64,.45); margin-top: -60px; position: relative; z-index: 3; }
+    .buscador label { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--gris); }
+    .buscador .form-control, .buscador .form-select { border: none; background: var(--arena); border-radius: 12px; padding: .7rem 1rem; }
+
+    .tour { background: #fff; border-radius: 24px; overflow: hidden; height: 100%; border: 1px solid #ece6da; transition: transform .25s, box-shadow .25s; display: flex; flex-direction: column; }
+    .tour:hover { transform: translateY(-6px); box-shadow: 0 25px 45px -25px rgba(11,79,92,.45); }
+    .tour .portada { height: 190px; position: relative; overflow: hidden; }
+    .tour .portada img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .tour:hover .portada img { transform: scale(1.06); }
+    .tour .duracion { z-index: 1; position: absolute; top: 14px; left: 14px; background: rgba(255,255,255,.9); color: var(--tinta); font-size: .78rem; font-weight: 600; padding: .3rem .75rem; border-radius: 50px; }
+    .tour .cuerpo { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .tour ul { list-style: none; padding: 0; margin: 0 0 1.2rem; font-size: .9rem; color: var(--gris); flex-grow: 1; }
+    .tour li { margin-bottom: .35rem; }
+    .tour li i { color: var(--selva); margin-right: .4rem; }
+    .precio { font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--oceano); }
+    .precio small { font-size: .8rem; color: var(--gris); font-family: 'Inter', sans-serif; font-weight: 400; }
+
+    .playas { background: var(--arena); }
+    .playa { border-radius: 24px; overflow: hidden; background: #fff; height: 100%; }
+    .playa img { display: block; width: 100%; height: 200px; object-fit: cover; }
+    .playa .cuerpo { padding: 1.4rem; }
+    .insignia { display: inline-block; font-size: .72rem; font-weight: 600; padding: .25rem .7rem; border-radius: 50px; background: #e3f4f3; color: var(--oceano); }
+
+    .fauna { text-align: center; padding: 1.8rem 1rem; border-radius: 22px; background: #fff; border: 1px solid #ece6da; height: 100%; }
+    .fauna .icono { width: 74px; height: 74px; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+
+    .consejos { background: var(--oceano); color: #fff; border-radius: 30px; padding: 3.5rem; }
+    .consejos .item { display: flex; gap: 1rem; margin-bottom: 1.3rem; }
+    .consejos .item i { font-size: 1.5rem; color: var(--atardecer); }
+    .consejos p { color: #cfe9e8; margin: 0; }
+
+    .reserva .form-control, .reserva .form-select { border-radius: 12px; padding: .8rem 1rem; border: 1px solid #e3ddd0; }
+    .reserva-caja { background: #fff; border-radius: 26px; padding: 2.5rem; box-shadow: 0 25px 50px -30px rgba(7,54,64,.4); border: 1px solid #ece6da; }
+
+    footer { background: var(--oceano-osc); color: #a9cfd0; padding: 60px 0 25px; font-size: .92rem; }
+    footer a { color: #a9cfd0; text-decoration: none; }
+    footer a:hover { color: var(--atardecer); }
+    .redes a { width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,.2); display: inline-flex; align-items: center; justify-content: center; color: #fff; margin-right: .4rem; }
+    .credito { border-top: 1px solid rgba(255,255,255,.12); margin-top: 2.5rem; padding-top: 1.2rem; font-size: .82rem; }
+  </style>
+</head>
+<body>
+
+  <div class="aviso-concepto">
+    Proyecto conceptual · Empresa ficticia creada para mostrar un diseño de <a href="../../index.html">tupágina.cr</a>
+  </div>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="marca" href="#inicio">
+        <svg width="42" height="42" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="16" fill="#fff"/>
+          <circle cx="40" cy="24" r="9" fill="#f6a54c"/>
+          <path d="M14 46c6-14 12-20 18-30" stroke="#2f6b45" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M18 26c4-4 10-4 14-1M20 33c3-4 9-5 13-3" stroke="#2f6b45" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M0 46q16-10 32 0t32 0v18H0z" fill="#5fc4c0"/>
+        </svg>
+        <span class="marca-texto">Selva y Mar<small>TOURS · MANUEL ANTONIO</small></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Abrir menú">
+        <i class="bi bi-list fs-1 text-white"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#tours">Tours</a></li>
+          <li class="nav-item"><a class="nav-link" href="#playas">Playas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fauna">Vida silvestre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#consejos">Consejos</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-sol btn-sm px-4" href="#reservar">Reservar</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <!-- Fotos libres de derechos (Pexels/Unsplash) -->
+    <img class="hero-paisaje" src="img/portada.jpg" alt="" style="object-fit:cover;object-position:center 60%">
+    <div class="hero-velo"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <p class="etiqueta mb-3" style="color:var(--atardecer)">Quepos · Puntarenas · Costa Rica</p>
+          <h1 class="mb-4">Donde la <span>selva</span> se encuentra con el mar.</h1>
+          <p class="lead mb-5">Tours guiados por expertos locales en Manuel Antonio: caminatas, miradores, playas y vida silvestre.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#tours" class="btn btn-sol">Ver tours</a>
+            <a href="#reservar" class="btn btn-blanco">Reservar ahora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <form class="buscador row g-3 align-items-end mx-0" id="formBuscar">
+      <div class="col-md-4">
+        <label for="bTour">Tour</label>
+        <select id="bTour" class="form-select">
+          <option>Caminata guiada en el parque</option>
+          <option>Miradores y Punta Catedral</option>
+          <option>Tour privado</option>
+          <option>Observación de fauna</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="bFecha">Fecha</label>
+        <input id="bFecha" type="date" class="form-control">
+      </div>
+      <div class="col-md-2">
+        <label for="bPersonas">Personas</label>
+        <input id="bPersonas" type="number" min="1" value="2" class="form-control">
+      </div>
+      <div class="col-md-3 d-grid">
+        <a href="#reservar" class="btn btn-sol">Consultar disponibilidad</a>
+      </div>
+    </form>
+  </div>
+
+  <section id="tours">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="etiqueta">Nuestros tours</p>
+        <h2 class="display-6">Aventuras para todos los gustos</h2>
+        <p class="texto-suave mx-auto" style="max-width:560px">Grupos pequeños, guías certificados y equipo incluido. Precios por persona.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="tour">
+            <div class="portada"><img src="img/tour-caminata.jpg" alt="Caminata guiada en el parque" loading="lazy"><span class="duracion"><i class="bi bi-clock"></i> 3 horas</span></div>
+            <div class="cuerpo">
+              <h3 class="h5">Caminata guiada en el parque</h3>
+              <ul><li><i class="bi bi-check2"></i>Guía naturalista bilingüe</li><li><i class="bi bi-check2"></i>Telescopio para observar fauna</li><li><i class="bi bi-check2"></i>Tiempo libre en la playa</li></ul>
+              <div class="d-flex justify-content-between align-items-center"><span class="precio">$45 <small>/ persona</small></span><a href="#reservar" class="btn btn-sm btn-sol px-3">Reservar</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="tour">
+            <div class="portada"><img src="img/tour-miradores.jpg" style="object-position:center 60%" alt="Miradores y Punta Catedral" loading="lazy"><span class="duracion"><i class="bi bi-clock"></i> 2,5 horas</span></div>
+            <div class="cuerpo">
+              <h3 class="h5">Miradores y Punta Catedral</h3>
+              <ul><li><i class="bi bi-check2"></i>Sendero hasta los miradores</li><li><i class="bi bi-check2"></i>Vistas de Punta Catedral</li><li><i class="bi bi-check2"></i>Parada para fotos y refrigerio</li></ul>
+              <div class="d-flex justify-content-between align-items-center"><span class="precio">$55 <small>/ persona</small></span><a href="#reservar" class="btn btn-sm btn-sol px-3">Reservar</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="tour">
+            <div class="portada"><img src="img/tour-privado.jpg" alt="Tour privado" loading="lazy"><span class="duracion"><i class="bi bi-clock"></i> Flexible</span></div>
+            <div class="cuerpo">
+              <h3 class="h5">Tour privado</h3>
+              <ul><li><i class="bi bi-check2"></i>Guía exclusivo para su grupo</li><li><i class="bi bi-check2"></i>Horario a su medida</li><li><i class="bi bi-check2"></i>Ideal para familias</li></ul>
+              <div class="d-flex justify-content-between align-items-center"><span class="precio">$95 <small>/ persona</small></span><a href="#reservar" class="btn btn-sm btn-sol px-3">Reservar</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="tour">
+            <div class="portada"><img src="img/tour-fauna.jpg" alt="Monos carablanca descansando en una rama" loading="lazy"><span class="duracion"><i class="bi bi-clock"></i> 2 horas</span></div>
+            <div class="cuerpo">
+              <h3 class="h5">Observación de fauna</h3>
+              <ul><li><i class="bi bi-check2"></i>Monos, perezosos y aves</li><li><i class="bi bi-check2"></i>Telescopio y binoculares</li><li><i class="bi bi-check2"></i>Fotos con el telescopio</li></ul>
+              <div class="d-flex justify-content-between align-items-center"><span class="precio">$50 <small>/ persona</small></span><a href="#reservar" class="btn btn-sm btn-sol px-3">Reservar</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="playas" id="playas">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="etiqueta">Playas</p>
+        <h2 class="display-6">Las playas más bonitas de la zona</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="playa">
+            <img src="img/playa-manuel-antonio.jpg" alt="Vista aérea de Playa Manuel Antonio" loading="lazy">
+            <div class="cuerpo">
+              <span class="insignia mb-2">Dentro del parque nacional</span>
+              <h3 class="h5 mt-2">Playa Manuel Antonio</h3>
+              <p class="texto-suave mb-0 small">Aguas tranquilas y transparentes, rodeadas de bosque tropical.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="playa">
+            <img src="img/playa-espadilla.jpg" alt="Playa Espadilla con palmeras" loading="lazy">
+            <div class="cuerpo">
+              <span class="insignia mb-2">Acceso público</span>
+              <h3 class="h5 mt-2">Playa Espadilla</h3>
+              <p class="texto-suave mb-0 small">Arena amplia y olas ideales para aprender a surfear.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="playa">
+            <img src="img/playa-biesanz.jpg" alt="Vista aérea de una bahía de aguas turquesa" loading="lazy">
+            <div class="cuerpo">
+              <span class="insignia mb-2">Acceso público</span>
+              <h3 class="h5 mt-2">Playa Biesanz</h3>
+              <p class="texto-suave mb-0 small">Una bahía pequeña y escondida, perfecta para esnórquel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fauna">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="etiqueta">Vida silvestre</p>
+        <h2 class="display-6">¿Qué puede ver en el camino?</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-6 col-lg-3"><div class="fauna"><div class="icono" style="background:#e9f3e6;color:#2f6b45"><i class="bi bi-tree-fill"></i></div><h3 class="h6">Perezosos</h3><p class="texto-suave small mb-0">De dos y tres dedos, en las copas de los árboles.</p></div></div>
+        <div class="col-6 col-lg-3"><div class="fauna"><div class="icono" style="background:#fdeee4;color:#ef7458"><i class="bi bi-emoji-smile-fill"></i></div><h3 class="h6">Monos</h3><p class="texto-suave small mb-0">Monos carablanca y el pequeño mono tití.</p></div></div>
+        <div class="col-6 col-lg-3"><div class="fauna"><div class="icono" style="background:#e3f4f3;color:#0b4f5c"><i class="bi bi-feather"></i></div><h3 class="h6">Aves</h3><p class="texto-suave small mb-0">Tucanes, garzas y martín pescador.</p></div></div>
+        <div class="col-6 col-lg-3"><div class="fauna"><div class="icono" style="background:#fdf3dd;color:#c58620"><i class="bi bi-bug-fill"></i></div><h3 class="h6">Reptiles e insectos</h3><p class="texto-suave small mb-0">Iguanas, cangrejos y mariposas de colores.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="consejos" class="pt-0">
+    <div class="container">
+      <div class="consejos">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5">
+            <p class="etiqueta" style="color:var(--atardecer)">Antes de venir</p>
+            <h2 class="mb-3">Consejos para su visita</h2>
+            <p>Siga estas recomendaciones para disfrutar al máximo y cuidar el parque.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="item"><i class="bi bi-calendar-check"></i><div><strong>Revise el horario del parque</strong><p>Consulte los días y horas de apertura antes de su visita.</p></div></div>
+            <div class="item"><i class="bi bi-backpack"></i><div><strong>Lleve lo necesario</strong><p>Bloqueador, repelente, agua y ropa cómoda.</p></div></div>
+            <div class="item mb-0"><i class="bi bi-heart"></i><div><strong>No alimente a los animales</strong><p>Su dieta natural los mantiene sanos y seguros.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservar" class="pt-0 reserva">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <p class="etiqueta">Reservas</p>
+          <h2 class="display-6 mb-4">Reserve su próxima aventura</h2>
+          <p class="texto-suave">Complete el formulario y le confirmamos la disponibilidad por WhatsApp o correo.</p>
+          <p class="mb-2"><i class="bi bi-geo-alt text-danger me-2"></i>Quepos, Puntarenas, Costa Rica</p>
+          <p class="mb-2"><i class="bi bi-whatsapp text-success me-2"></i>+506 0000-0000</p>
+          <p class="mb-0"><i class="bi bi-envelope me-2" style="color:var(--oceano)"></i>reservas@selvaymar.example</p>
+        </div>
+        <div class="col-lg-7">
+          <form class="reserva-caja" id="formReserva" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6"><label class="form-label" for="rNombre">Nombre completo</label><input id="rNombre" class="form-control" required></div>
+              <div class="col-md-6"><label class="form-label" for="rCorreo">Correo electrónico</label><input id="rCorreo" type="email" class="form-control" required></div>
+              <div class="col-md-6"><label class="form-label" for="rTour">Tour</label><select id="rTour" class="form-select"><option>Caminata guiada en el parque</option><option>Miradores y Punta Catedral</option><option>Tour privado</option><option>Observación de fauna</option></select></div>
+              <div class="col-md-3"><label class="form-label" for="rFecha">Fecha</label><input id="rFecha" type="date" class="form-control"></div>
+              <div class="col-md-3"><label class="form-label" for="rPersonas">Personas</label><input id="rPersonas" type="number" min="1" value="2" class="form-control"></div>
+              <div class="col-12"><button class="btn btn-sol w-100" type="submit">Solicitar reserva</button></div>
+              <p id="mensajeReserva" class="small mb-0 text-center"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <span class="marca-texto text-white">Selva y Mar Tours</span>
+          <p class="mt-3 mb-4" style="max-width:340px">Experiencias guiadas en Manuel Antonio, con respeto por la naturaleza y la comunidad.</p>
+          <div class="redes"><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="TripAdvisor"><i class="bi bi-globe2"></i></a></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h4 class="h6 text-white mb-3">Tours</h4>
+          <p class="mb-2"><a href="#tours">Caminata guiada</a></p>
+          <p class="mb-2"><a href="#tours">Miradores y Punta Catedral</a></p>
+          <p class="mb-2"><a href="#tours">Observación de fauna</a></p>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h4 class="h6 text-white mb-3">Información</h4>
+          <p class="mb-2"><a href="#playas">Playas</a></p>
+          <p class="mb-2"><a href="#consejos">Consejos</a></p>
+          <p class="mb-2"><a href="#reservar">Reservas</a></p>
+        </div>
+      </div>
+      <div class="credito d-flex flex-column flex-md-row justify-content-between gap-2">
+        <span>Selva y Mar Tours es una empresa ficticia. Proyecto conceptual.</span>
+        <span>Diseño y desarrollo: <a href="../../index.html" class="text-white">tupágina.cr</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("formReserva").addEventListener("submit", e => {
+      e.preventDefault();
+      const nombre = document.getElementById("rNombre").value.trim();
+      const correo = document.getElementById("rCorreo").value.trim();
+      const msj = document.getElementById("mensajeReserva");
+      if (!nombre || !correo.includes("@")) { msj.textContent = "Complete su nombre y un correo válido."; msj.style.color = "#c0392b"; return; }
+      msj.style.color = "#2f6b45";
+      msj.textContent = "¡Gracias, " + nombre + "! (Demostración: este formulario no envía datos.)";
+    });
+  </script>
+</body>
+</html>
