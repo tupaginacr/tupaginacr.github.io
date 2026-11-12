@@ -149,6 +149,9 @@ Los colores se cambian en `index.html`, dentro de `:root { ... }` al inicio del 
 - **Sin número de WhatsApp:** mientras `NUMERO_WHATSAPP` sea `"50600000000"`, el formulario de contacto, el cotizador y "Mi solicitud" envían por **correo** a contacto.tupaginacr@gmail.com, y el botón verde flotante se oculta. Al poner el número real, todo cambia solo a WhatsApp.
 - Respaldo de los archivos anteriores: guardados antes del cambio.
 
+### 2026-11-12 — Descuento en "Mi solicitud"
+- Al marcar "Acepto que mi página se muestre en el portafolio…", el panel ahora muestra subtotal, el descuento (25 % del plan, igual que el cotizador) y el total actualizado. El mensaje enviado también incluye el descuento.
+
 ## Pendientes
 
 - [x] Correo del negocio elegido: contacto.tupaginacr@gmail.com (ya está en la página). Falta: nombre visible "tupágina.cr", foto de perfil con el ícono KA y datos de recuperación.

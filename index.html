@@ -1000,6 +1000,11 @@
       <div id="listaSolicitud" class="flex-grow-1"></div>
       <div id="pieSolicitud" class="mt-3">
         <div class="resumen-solicitud mb-3">
+          <div id="descuentoSolicitudCaja" style="display:none">
+            <div class="d-flex justify-content-between small"><span>Subtotal</span><span id="subtotalSolicitud"></span></div>
+            <div class="d-flex justify-content-between small" style="color:var(--verde)"><span id="descuentoSolicitudTexto">Descuento portafolio y reseña (25 %)</span><strong id="descuentoSolicitud" style="white-space:nowrap"></strong></div>
+            <hr class="my-2">
+          </div>
           <div class="d-flex justify-content-between align-items-end"><span>Total pago único</span><span class="total" id="totalSolicitud">₡0</span></div>
           <div class="text-end small text-muted" id="dolaresSolicitud"></div>
           <div class="d-flex justify-content-between small mt-2" id="mensualSolicitudCaja"><span>Mantenimiento</span><strong id="mensualSolicitud"></strong></div>
@@ -1140,6 +1145,14 @@
       a.textContent = texto; a.classList.add("mostrar");
       clearTimeout(a._t); a._t = setTimeout(() => a.classList.remove("mostrar"), 1800);
     }
+    // Descuento por portafolio: 25 % solo sobre el plan (mismo cálculo que el cotizador)
+    function calcularSolicitud() {
+      const subtotal = solicitud.filter(s => !s.mensual).reduce((t, s) => t + s.precio * s.cantidad, 0);
+      const plan = solicitud.find(s => s.id === "plan");
+      const marcado = document.getElementById("sPortafolio").checked;
+      const descuento = marcado && plan ? Math.round(plan.precio * PRECIOS.descuentoPortafolio / 1000) * 1000 : 0;
+      return { subtotal, descuento, total: subtotal - descuento, marcado, plan };
+    }
     function pintarSolicitud() {
       const cantidad = solicitud.reduce((t, s) => t + s.cantidad, 0);
       const unico = solicitud.filter(s => !s.mensual).reduce((t, s) => t + s.precio * s.cantidad, 0);
@@ -1160,8 +1173,13 @@
             </div>
             <button type="button" class="quitar" data-quitar="${i}" aria-label="Eliminar ${s.nombre}"><i class="bi bi-trash3"></i></button>
           </div>`).join("");
-      document.getElementById("totalSolicitud").textContent = colones(unico);
-      document.getElementById("dolaresSolicitud").textContent = unico ? "Aprox. $" + Math.round(unico / PRECIOS.TIPO_CAMBIO).toLocaleString("en-US") : "";
+      const c = calcularSolicitud();
+      document.getElementById("descuentoSolicitudCaja").style.display = c.marcado ? "block" : "none";
+      document.getElementById("subtotalSolicitud").textContent = colones(c.subtotal);
+      document.getElementById("descuentoSolicitudTexto").textContent = c.plan ? "Descuento portafolio (25 % del plan)" : "Descuento (agregue un plan)";
+      document.getElementById("descuentoSolicitud").textContent = c.descuento ? colones(-c.descuento) : "—";
+      document.getElementById("totalSolicitud").textContent = colones(c.total);
+      document.getElementById("dolaresSolicitud").textContent = c.total ? "Aprox. $" + Math.round(c.total / PRECIOS.TIPO_CAMBIO).toLocaleString("en-US") : "";
       document.getElementById("mensualSolicitudCaja").style.setProperty("display", mensual ? "flex" : "none", "important");
       document.getElementById("mensualSolicitud").textContent = colones(mensual) + " / mes";
       try { localStorage.setItem("solicitudTupagina", JSON.stringify(solicitud)); } catch (e) {}
@@ -1190,16 +1208,18 @@
       if (q) solicitud.splice(+q.dataset.quitar, 1);
       pintarSolicitud();
     });
+    document.getElementById("sPortafolio").addEventListener("change", pintarSolicitud);
     document.getElementById("sNombre").addEventListener("input", () => document.getElementById("errorSolicitud").textContent = "");
     document.getElementById("enviarSolicitud").addEventListener("click", () => {
       const nombre = document.getElementById("sNombre").value.trim();
       const negocio = document.getElementById("sNegocio").value.trim();
       if (!nombre) { document.getElementById("errorSolicitud").textContent = "Escriba su nombre para enviar la solicitud."; return; }
-      const unico = solicitud.filter(s => !s.mensual).reduce((t, s) => t + s.precio * s.cantidad, 0);
+      const c = calcularSolicitud();
       let texto = `Hola tupágina.cr, soy ${nombre}${negocio ? " de " + negocio : ""}. Me interesa:\n\n`;
       texto += solicitud.map(s => `• ${s.cantidad > 1 ? s.cantidad + " x " : ""}${s.nombre}: ${colones(s.precio * s.cantidad)}${s.mensual ? " por mes" : ""}`).join("\n");
-      texto += `\n\nTotal aproximado (pago único): ${colones(unico)}`;
-      if (document.getElementById("sPortafolio").checked) texto += "\nAcepto mostrar mi página en el portafolio y dejar una reseña (descuento del 25 %).";
+      if (c.descuento) texto += `\n\nSubtotal: ${colones(c.subtotal)}\nDescuento portafolio y reseña (25 % del plan): ${colones(-c.descuento)}`;
+      texto += `\n${c.descuento ? "" : "\n"}Total aproximado (pago único): ${colones(c.total)}`;
+      if (c.marcado) texto += "\nAcepto mostrar mi página en el portafolio y dejar una reseña.";
       texto += "\n\n¿Me pueden enviar la propuesta?";
       enviarMensaje(texto, "Solicitud de servicios - " + nombre);
     });
