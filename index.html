@@ -160,6 +160,38 @@
     }
     .extra strong { color: #7fd1c6; }
 
+
+    /* ===== Mi solicitud (carrito de servicios) ===== */
+    .enlace-ejemplo { display: inline-block; font-weight: 600; font-size: .9rem; color: var(--verde); text-decoration: none; }
+    .enlace-ejemplo:hover { text-decoration: underline; }
+    .enlace-ejemplo-claro { color: #7fd1c6; font-weight: 600; }
+    .extra { display: flex; flex-direction: column; }
+    .btn-agregar-extra { margin-top: auto; align-self: flex-start; margin-top: 1rem; border: 1px solid #7fd1c6; background: transparent; color: #7fd1c6; border-radius: 50px; padding: .35rem 1rem; font-weight: 600; font-size: .88rem; transition: .2s; }
+    .btn-agregar-extra:hover { background: #7fd1c6; color: var(--tinta); }
+    .agregar-servicio.agregado { background: var(--verde) !important; border-color: var(--verde) !important; color: #fff !important; }
+    .contador-solicitud { display: inline-block; min-width: 20px; padding: 0 6px; margin-left: 3px; border-radius: 20px; background: var(--tinta); color: #fff; font-size: .75rem; font-weight: 700; }
+    .solicitud-flotante { position: fixed; right: 22px; bottom: 22px; z-index: 1000; width: 60px; height: 60px; border-radius: 50%; border: none; background: var(--tinta); color: #fff; font-size: 1.5rem; box-shadow: 0 10px 24px -6px rgba(14,35,64,.55); display: none; align-items: center; justify-content: center; border: 2px solid var(--coral); }
+    .solicitud-flotante.visible { display: flex; }
+    .con-whatsapp .solicitud-flotante { bottom: 94px; }
+    .solicitud-flotante .contador-solicitud { position: absolute; top: -4px; right: -4px; background: var(--coral); color: var(--tinta); padding: 2px 7px; }
+    #solicitud { width: 430px; max-width: 100%; }
+    #solicitud .offcanvas-header { background: var(--tinta); color: #fff; }
+    #solicitud .offcanvas-header .btn-close { filter: invert(1); }
+    .item-solicitud { display: flex; gap: .8rem; align-items: center; padding: .85rem 0; border-bottom: 1px dashed var(--borde); }
+    .item-solicitud .icono { width: 46px; height: 46px; border-radius: 12px; background: #e6f6f3; color: var(--verde); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .item-solicitud .nombre { font-weight: 700; font-size: .95rem; line-height: 1.2; }
+    .item-solicitud .cantidad { display: inline-flex; align-items: center; border: 1px solid var(--borde); border-radius: 50px; overflow: hidden; margin-top: .3rem; }
+    .item-solicitud .cantidad button { border: none; background: var(--crema); width: 28px; height: 28px; }
+    .item-solicitud .cantidad span { min-width: 26px; text-align: center; font-weight: 700; font-size: .88rem; }
+    .item-solicitud .quitar { border: none; background: none; color: #b0413e; margin-left: auto; font-size: 1.05rem; }
+    .solicitud-vacia { text-align: center; color: var(--gris); padding: 3rem 1rem; }
+    .solicitud-vacia i { font-size: 2.8rem; color: var(--coral); display: block; margin-bottom: .5rem; }
+    .resumen-solicitud { background: var(--crema); border-radius: 16px; padding: 1rem 1.2rem; }
+    .resumen-solicitud .total { font-family: 'Fraunces', serif; font-size: 1.9rem; font-weight: 600; color: var(--tinta); }
+    .aviso-solicitud { font-size: .8rem; color: var(--gris); }
+    .aviso-agregado { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%) translateY(120px); background: var(--tinta); color: #fff; padding: .7rem 1.3rem; border-radius: 50px; z-index: 1060; transition: transform .3s; font-weight: 600; font-size: .92rem; width: max-content; max-width: 90vw; text-align: center; }
+    .aviso-agregado.mostrar { transform: translateX(-50%) translateY(0); }
+
     /* ===== Proceso ===== */
     .paso-num {
       font-family: 'Fraunces', serif; font-size: 2.6rem; color: var(--verde); line-height: 1;
@@ -304,7 +336,7 @@
           <li class="nav-item"><a class="nav-link" href="#proceso">¿Cómo trabajamos?</a></li>
           <li class="nav-item"><a class="nav-link" href="#portafolio">Portafolio</a></li>
           <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn btn-principal btn-sm px-3" href="#contacto">Cotizar</a></li>
+          <li class="nav-item ms-lg-2"><button type="button" class="btn btn-principal btn-sm px-3 abrir-solicitud"><i class="bi bi-bag me-1"></i>Mi solicitud <span class="contador-solicitud">0</span></button></li>
         </ul>
       </div>
     </div>
@@ -400,7 +432,8 @@
           <div class="servicio">
             <i class="bi bi-bag-check"></i>
             <h3 class="h5">Tiendas en línea</h3>
-            <p class="texto-suave mb-0">Catálogos con pedidos por WhatsApp o tiendas con pagos en línea (se cotiza aparte).</p>
+            <p class="texto-suave mb-2">Carrito de compras con pedidos por WhatsApp y pago por SINPE Móvil, o tiendas con pagos en línea (se cotiza aparte).</p>
+            <a href="proyectos/luz-de-lavanda/index.html#productos" target="_blank" class="enlace-ejemplo">Ver ejemplo de carrito <i class="bi bi-arrow-up-right"></i></a>
           </div>
         </div>
         <div class="col-md-6 col-lg-4">
@@ -477,7 +510,7 @@
               <li class="no"><i class="bi bi-x-circle"></i>Formulario de contacto</li>
               <li class="no"><i class="bi bi-x-circle"></i>Galería / Blog</li>
             </ul>
-            <a href="#contacto" class="btn btn-borde w-100">Quiero este plan</a>
+            <button type="button" class="btn btn-borde w-100 agregar-servicio" data-id="plan" data-nombre="Plan Emprende" data-precio="85000"><i class="bi bi-bag-plus me-2"></i>Agregar a mi solicitud</button>
           </div>
         </div>
 
@@ -499,7 +532,7 @@
               <li><i class="bi bi-check-circle-fill"></i>2 rondas de cambios</li>
               <li><i class="bi bi-check-circle-fill"></i>Manual de uso + 1 mes de soporte gratis</li>
             </ul>
-            <a href="#contacto" class="btn btn-principal w-100">Quiero este plan</a>
+            <button type="button" class="btn btn-principal w-100 agregar-servicio" data-id="plan" data-nombre="Plan Pyme" data-precio="175000"><i class="bi bi-bag-plus me-2"></i>Agregar a mi solicitud</button>
           </div>
         </div>
 
@@ -520,31 +553,42 @@
               <li><i class="bi bi-check-circle-fill"></i>3 rondas de cambios</li>
               <li><i class="bi bi-check-circle-fill"></i>Manual de uso + 2 meses de soporte gratis</li>
             </ul>
-            <a href="#contacto" class="btn btn-borde w-100">Quiero este plan</a>
+            <button type="button" class="btn btn-borde w-100 agregar-servicio" data-id="plan" data-nombre="Plan Empresa" data-precio="315000"><i class="bi bi-bag-plus me-2"></i>Agregar a mi solicitud</button>
           </div>
         </div>
       </div>
 
-      <!-- Servicios adicionales -->
+      <!-- Servicios adicionales (el botón Agregar usa data-precio; si cambia un precio, cámbielo en el texto y en data-precio) -->
       <div class="row g-3 mt-5">
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="extra">
+            <strong>Carrito con pedidos por WhatsApp</strong>
+            <p class="mb-0 mt-1"><b>₡45.000</b> (aprox. $100) · carrito de compras, pedido por WhatsApp y pago por SINPE Móvil. <a href="proyectos/luz-de-lavanda/index.html#productos" target="_blank" class="enlace-ejemplo-claro">Ver ejemplo</a></p>
+            <button type="button" class="btn-agregar-extra agregar-servicio" data-id="carrito" data-nombre="Carrito con pedidos por WhatsApp + SINPE Móvil" data-precio="45000"><i class="bi bi-plus-lg"></i> Agregar</button>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
           <div class="extra">
             <strong>Mantenimiento mensual</strong>
             <p class="mb-0 mt-1">Desde <b>₡16.000/mes</b> (aprox. $35) · hasta 4 cambios de contenido al mes.</p>
+            <button type="button" class="btn-agregar-extra agregar-servicio" data-id="mantenimiento" data-nombre="Mantenimiento mensual" data-precio="16000" data-mensual="1"><i class="bi bi-plus-lg"></i> Agregar</button>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-3">
           <div class="extra">
             <strong>Página adicional</strong>
             <p class="mb-0 mt-1"><b>₡18.000</b> (aprox. $40) por cada página extra a su plan.</p>
+            <button type="button" class="btn-agregar-extra agregar-servicio" data-id="pagina" data-nombre="Página adicional" data-precio="18000" data-varias="1"><i class="bi bi-plus-lg"></i> Agregar</button>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-3">
           <div class="extra">
             <strong>Rediseño de sitio existente</strong>
             <p class="mb-0 mt-1">Desde <b>₡115.000</b> (aprox. $250) · cotización según el tamaño.</p>
+            <button type="button" class="btn-agregar-extra agregar-servicio" data-id="rediseno" data-nombre="Rediseño de sitio existente (desde)" data-precio="115000"><i class="bi bi-plus-lg"></i> Agregar</button>
           </div>
         </div>
+      </div>
       </div>
       <!-- Descuento por portafolio + reseña (si cambia el %, cámbielo también en PRECIOS.descuentoPortafolio del cotizador) -->
       <div class="descuento-portafolio mt-5">
@@ -601,7 +645,7 @@
       <div class="text-center mb-5">
         <p class="etiqueta">Cotizador</p>
         <h2>Calcule el precio de su página</h2>
-        <p class="texto-suave mx-auto" style="max-width:600px">Marque lo que necesita y vea al instante un precio aproximado. Luego envíenos su cotización por WhatsApp.</p>
+        <p class="texto-suave mx-auto" style="max-width:600px">Marque lo que necesita y vea al instante un precio aproximado. Luego envíenos su cotización con un clic.</p>
       </div>
       <div class="row g-4">
         <div class="col-lg-7">
@@ -625,7 +669,7 @@
 
             <h3 class="h5 mb-3"><span class="paso-cot">3</span>Extras</h3>
             <div class="row g-2 mb-4" id="cExtras">
-              <div class="col-md-6"><label class="extra-cot"><input type="checkbox" class="form-check-input" value="catalogo"><span><strong>Catálogo con pedidos por WhatsApp</strong><small id="pc-catalogo"></small></span></label></div>
+              <div class="col-md-6"><label class="extra-cot"><input type="checkbox" class="form-check-input" value="catalogo"><span><strong>Carrito con pedidos por WhatsApp + SINPE</strong><small id="pc-catalogo"></small></span></label></div>
               <div class="col-md-6"><label class="extra-cot"><input type="checkbox" class="form-check-input" value="tienda"><span><strong>Tienda con pagos en línea</strong><small>Se cotiza aparte</small></span></label></div>
               <div class="col-md-6"><label class="extra-cot"><input type="checkbox" class="form-check-input" value="logo"><span><strong>Diseño de logo</strong><small id="pc-logo"></small></span></label></div>
               <div class="col-md-6"><label class="extra-cot"><input type="checkbox" class="form-check-input" value="redes"><span><strong>5 artes para redes sociales</strong><small id="pc-redes"></small></span></label></div>
@@ -651,7 +695,7 @@
             <div class="mensual-cot" id="cMensualCaja"><span>Mantenimiento</span><strong id="cMensual"></strong></div>
             <p class="nota-cot" id="cNotaTienda"><i class="bi bi-info-circle"></i> La tienda con pagos en línea se cotiza aparte según la cantidad de productos.</p>
             <p class="entrega-cot"><i class="bi bi-calendar-check"></i> Entrega estimada: <strong id="cEntrega"></strong></p>
-            <button type="button" class="btn btn-principal w-100 mt-2" id="cEnviar"><i class="bi bi-whatsapp me-2"></i>Enviar mi cotización</button>
+            <button type="button" class="btn btn-principal w-100 mt-2 btn-enviar" id="cEnviar" data-texto="Enviar mi cotización"><i class="bi bi-whatsapp me-2"></i>Enviar mi cotización</button>
             <p class="aviso-cot">Precio aproximado. La cotización final depende del contenido y se confirma antes de iniciar. Vea nuestra <a href="politica-privacidad.html" style="color:#7fd1c6">política de privacidad</a>.</p>
           </div>
         </div>
@@ -735,9 +779,9 @@
             <div class="info">
               <p class="tipo mb-1">Emprendimiento artesanal</p>
               <h3 class="h5 mb-2">Luz de Lavanda</h3>
-              <p class="texto-suave small mb-3">Tienda para velas y jabones artesanales: categorías, productos, pedidos personalizados y contacto.</p>
+              <p class="texto-suave small mb-3">Tienda de velas y jabones artesanales con carrito de compras: el cliente arma su pedido, lo envía por WhatsApp y paga por SINPE Móvil.</p>
               <div class="d-flex justify-content-between align-items-center">
-                <div><span class="chip">Bootstrap</span><span class="chip">HTML5</span><span class="chip">CSS3</span></div>
+                <div><span class="chip">Bootstrap</span><span class="chip">HTML5</span><span class="chip">Carrito</span></div>
                 <span class="ver">Ver <i class="bi bi-arrow-up-right"></i></span>
               </div>
             </div>
@@ -826,7 +870,7 @@
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#p5">¿Hacen tiendas en línea?</button>
           </h3>
           <div id="p5" class="accordion-collapse collapse" data-bs-parent="#preguntas">
-            <div class="accordion-body texto-suave">Para catálogos con pedidos por WhatsApp, sí. Para tiendas con pagos en línea, escríbanos y lo cotizamos aparte.</div>
+            <div class="accordion-body texto-suave">Sí. Hacemos carritos de compras donde el cliente arma su pedido, lo envía por WhatsApp y paga por SINPE Móvil (vea el ejemplo en Luz de Lavanda). Para tiendas con pagos con tarjeta en línea, escríbanos y lo cotizamos aparte.</div>
           </div>
         </div>
         <div class="accordion-item">
@@ -881,7 +925,7 @@
                 <textarea class="form-control" id="mensaje" rows="4"></textarea>
               </div>
               <div class="col-12">
-                <button type="submit" class="btn btn-principal w-100"><i class="bi bi-whatsapp me-2"></i>Enviar por WhatsApp</button>
+                <button type="submit" class="btn btn-principal w-100 btn-enviar" data-texto="Enviar mensaje"><i class="bi bi-whatsapp me-2"></i>Enviar por WhatsApp</button>
                 <p class="small text-muted text-center mt-2 mb-0">Al enviar acepta nuestra <a href="politica-privacidad.html" style="color:var(--verde)">política de privacidad</a>.</p>
               </div>
             </div>
@@ -944,13 +988,54 @@
     </div>
   </footer>
 
+  <!-- ================= MI SOLICITUD (carrito de servicios) ================= -->
+  <button type="button" class="solicitud-flotante abrir-solicitud" aria-label="Ver mi solicitud"><i class="bi bi-bag"></i><span class="contador-solicitud">0</span></button>
+  <div class="aviso-agregado" id="avisoAgregado" role="status"></div>
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="solicitud" aria-labelledby="tituloSolicitud">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title h4 mb-0" id="tituloSolicitud"><i class="bi bi-bag me-2"></i>Mi solicitud</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div id="listaSolicitud" class="flex-grow-1"></div>
+      <div id="pieSolicitud" class="mt-3">
+        <div class="resumen-solicitud mb-3">
+          <div class="d-flex justify-content-between align-items-end"><span>Total pago único</span><span class="total" id="totalSolicitud">₡0</span></div>
+          <div class="text-end small text-muted" id="dolaresSolicitud"></div>
+          <div class="d-flex justify-content-between small mt-2" id="mensualSolicitudCaja"><span>Mantenimiento</span><strong id="mensualSolicitud"></strong></div>
+        </div>
+        <div class="row g-2 mb-2">
+          <div class="col-12"><input type="text" class="form-control" id="sNombre" placeholder="Su nombre"></div>
+          <div class="col-12"><input type="text" class="form-control" id="sNegocio" placeholder="Negocio o empresa (opcional)"></div>
+          <div class="col-12"><label class="d-flex gap-2 small align-items-start"><input type="checkbox" class="form-check-input mt-1" id="sPortafolio"> Acepto que mi página se muestre en el portafolio y dejar una reseña (25 % de descuento, cupos limitados).</label></div>
+        </div>
+        <p id="errorSolicitud" class="small mb-2" style="color:#b0413e"></p>
+        <button type="button" class="btn btn-principal w-100 mb-2 btn-enviar" id="enviarSolicitud" data-texto="Enviar mi solicitud"><i class="bi bi-whatsapp me-2"></i>Enviar mi solicitud</button>
+        <p class="aviso-solicitud mb-0">Precio aproximado. Descuentos y paquetes se aplican al confirmar. No se cobra nada hasta aprobar la propuesta.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Botón flotante de WhatsApp: cambie 50600000000 por su número (506 + 8 dígitos, sin espacios) -->
-  <a href="https://wa.me/50600000000" class="whatsapp" target="_blank" aria-label="Escribir por WhatsApp"><i class="bi bi-whatsapp"></i><span class="texto-wa">¿Hablamos?</span></a>
+  <a href="https://wa.me/50600000000" class="whatsapp" id="botonWhatsapp" target="_blank" aria-label="Escribir por WhatsApp"><i class="bi bi-whatsapp"></i><span class="texto-wa">¿Hablamos?</span></a>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     // ===== Cambie aquí su número de WhatsApp =====
     const NUMERO_WHATSAPP = "50600000000";
+    // Mientras no haya número real, los mensajes se envían por correo y el botón verde se oculta.
+    const CORREO = "contacto.tupaginacr@gmail.com";
+    const HAY_WHATSAPP = NUMERO_WHATSAPP !== "50600000000";
+    function enviarMensaje(texto, asunto) {
+      if (HAY_WHATSAPP) window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
+      else window.location.href = `mailto:${CORREO}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(texto)}`;
+    }
+    document.querySelectorAll(".btn-enviar").forEach(b => {
+      b.innerHTML = HAY_WHATSAPP ? `<i class="bi bi-whatsapp me-2"></i>${b.dataset.texto} por WhatsApp` : `<i class="bi bi-envelope me-2"></i>${b.dataset.texto}`;
+    });
+    const botonWa = document.getElementById("botonWhatsapp");
+    if (HAY_WHATSAPP) { botonWa.href = `https://wa.me/${NUMERO_WHATSAPP}`; document.body.classList.add("con-whatsapp"); }
+    else botonWa.style.display = "none";
 
     document.getElementById("anio").textContent = new Date().getFullYear();
 
@@ -972,7 +1057,7 @@
 
       const texto = `Hola tupágina.cr, soy ${nombre}${negocio ? " de " + negocio : ""}.\n` +
                     `Me interesa: ${plan}.\n${mensaje}`;
-      window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
+      enviarMensaje(texto, "Consulta desde la página - " + nombre);
     });
 
     // ===== Cotizador =====
@@ -985,7 +1070,7 @@
       },
       paginaExtra: 18000,
       extras: {
-        catalogo: { nombre: "Catálogo con pedidos por WhatsApp", precio: 45000 },
+        catalogo: { nombre: "Carrito con pedidos por WhatsApp + SINPE Móvil", precio: 45000 },
         tienda:   { nombre: "Tienda con pagos en línea", precio: 0 },
         logo:     { nombre: "Diseño de logo", precio: 35000 },
         redes:    { nombre: "5 artes para redes sociales", precio: 20000 },
@@ -1039,9 +1124,86 @@
       if (r.mant) texto += "\nMantenimiento mensual: " + colones(PRECIOS.mantenimiento);
       if (document.getElementById("cPortafolio").checked) texto += "\nAcepto mostrar mi página en el portafolio y dejar una reseña.";
       if (r.tienda) texto += "\nTambién me interesa una tienda con pagos en línea.";
-      window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
+      enviarMensaje(texto, "Cotización desde la página");
     });
     calcular();
+
+    // ===== Mi solicitud (carrito de servicios) =====
+    // Los botones .agregar-servicio llevan data-id, data-nombre y data-precio.
+    // Solo se puede elegir un plan (si agrega otro, reemplaza al anterior).
+    const ICONOS = { plan: "bi-window-sidebar", carrito: "bi-cart3", mantenimiento: "bi-tools", pagina: "bi-file-earmark-plus", rediseno: "bi-arrow-repeat" };
+    let solicitud = [];
+    try { solicitud = JSON.parse(localStorage.getItem("solicitudTupagina")) || []; } catch (e) { solicitud = []; }
+    const panelSolicitud = bootstrap.Offcanvas.getOrCreateInstance(document.getElementById("solicitud"));
+    function avisar(texto) {
+      const a = document.getElementById("avisoAgregado");
+      a.textContent = texto; a.classList.add("mostrar");
+      clearTimeout(a._t); a._t = setTimeout(() => a.classList.remove("mostrar"), 1800);
+    }
+    function pintarSolicitud() {
+      const cantidad = solicitud.reduce((t, s) => t + s.cantidad, 0);
+      const unico = solicitud.filter(s => !s.mensual).reduce((t, s) => t + s.precio * s.cantidad, 0);
+      const mensual = solicitud.filter(s => s.mensual).reduce((t, s) => t + s.precio, 0);
+      document.querySelectorAll(".contador-solicitud").forEach(c => c.textContent = cantidad);
+      document.querySelector(".solicitud-flotante").classList.toggle("visible", cantidad > 0);
+      document.getElementById("pieSolicitud").style.display = cantidad ? "block" : "none";
+      const lista = document.getElementById("listaSolicitud");
+      lista.innerHTML = !cantidad
+        ? '<div class="solicitud-vacia"><i class="bi bi-bag-plus"></i>Aún no ha agregado servicios.<br>Elija un plan y los extras que necesite.</div>'
+        : solicitud.map((s, i) => `
+          <div class="item-solicitud">
+            <div class="icono"><i class="bi ${ICONOS[s.id] || "bi-check2"}"></i></div>
+            <div>
+              <div class="nombre">${s.nombre}</div>
+              <div class="small text-muted">${colones(s.precio)}${s.mensual ? " por mes" : (s.varias ? " c/u" : "")}</div>
+              ${s.varias ? `<div class="cantidad"><button type="button" data-i="${i}" data-d="-1" aria-label="Quitar una">−</button><span>${s.cantidad}</span><button type="button" data-i="${i}" data-d="1" aria-label="Agregar una">+</button></div>` : ""}
+            </div>
+            <button type="button" class="quitar" data-quitar="${i}" aria-label="Eliminar ${s.nombre}"><i class="bi bi-trash3"></i></button>
+          </div>`).join("");
+      document.getElementById("totalSolicitud").textContent = colones(unico);
+      document.getElementById("dolaresSolicitud").textContent = unico ? "Aprox. $" + Math.round(unico / PRECIOS.TIPO_CAMBIO).toLocaleString("en-US") : "";
+      document.getElementById("mensualSolicitudCaja").style.setProperty("display", mensual ? "flex" : "none", "important");
+      document.getElementById("mensualSolicitud").textContent = colones(mensual) + " / mes";
+      try { localStorage.setItem("solicitudTupagina", JSON.stringify(solicitud)); } catch (e) {}
+    }
+    document.querySelectorAll(".agregar-servicio").forEach(b => b.addEventListener("click", () => {
+      const d = b.dataset;
+      const existente = solicitud.find(s => s.id === d.id);
+      if (d.id === "plan" && existente) { existente.nombre = d.nombre; existente.precio = +d.precio; }
+      else if (existente && d.varias) existente.cantidad++;
+      else if (!existente) solicitud.push({ id: d.id, nombre: d.nombre, precio: +d.precio, cantidad: 1, mensual: !!d.mensual, varias: !!d.varias });
+      if (d.id === "plan") solicitud.sort((a, b) => (a.id === "plan" ? -1 : b.id === "plan" ? 1 : 0));
+      const original = b.innerHTML;
+      b.classList.add("agregado"); b.innerHTML = '<i class="bi bi-check2 me-1"></i>Agregado';
+      setTimeout(() => { b.classList.remove("agregado"); b.innerHTML = original; }, 1200);
+      avisar("✓ " + d.nombre + " agregado a su solicitud");
+      pintarSolicitud();
+    }));
+    document.querySelectorAll(".abrir-solicitud").forEach(b => b.addEventListener("click", () => {
+      const menu = document.getElementById("menu");
+      if (menu.classList.contains("show")) bootstrap.Collapse.getOrCreateInstance(menu).hide();
+      panelSolicitud.show();
+    }));
+    document.getElementById("listaSolicitud").addEventListener("click", e => {
+      const c = e.target.closest("[data-d]"), q = e.target.closest("[data-quitar]");
+      if (c) { const s = solicitud[+c.dataset.i]; s.cantidad += +c.dataset.d; if (s.cantidad < 1) solicitud.splice(+c.dataset.i, 1); }
+      if (q) solicitud.splice(+q.dataset.quitar, 1);
+      pintarSolicitud();
+    });
+    document.getElementById("sNombre").addEventListener("input", () => document.getElementById("errorSolicitud").textContent = "");
+    document.getElementById("enviarSolicitud").addEventListener("click", () => {
+      const nombre = document.getElementById("sNombre").value.trim();
+      const negocio = document.getElementById("sNegocio").value.trim();
+      if (!nombre) { document.getElementById("errorSolicitud").textContent = "Escriba su nombre para enviar la solicitud."; return; }
+      const unico = solicitud.filter(s => !s.mensual).reduce((t, s) => t + s.precio * s.cantidad, 0);
+      let texto = `Hola tupágina.cr, soy ${nombre}${negocio ? " de " + negocio : ""}. Me interesa:\n\n`;
+      texto += solicitud.map(s => `• ${s.cantidad > 1 ? s.cantidad + " x " : ""}${s.nombre}: ${colones(s.precio * s.cantidad)}${s.mensual ? " por mes" : ""}`).join("\n");
+      texto += `\n\nTotal aproximado (pago único): ${colones(unico)}`;
+      if (document.getElementById("sPortafolio").checked) texto += "\nAcepto mostrar mi página en el portafolio y dejar una reseña (descuento del 25 %).";
+      texto += "\n\n¿Me pueden enviar la propuesta?";
+      enviarMensaje(texto, "Solicitud de servicios - " + nombre);
+    });
+    pintarSolicitud();
   </script>
 </body>
 </html>

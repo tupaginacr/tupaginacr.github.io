@@ -141,6 +141,14 @@ Los colores se cambian en `index.html`, dentro de `:root { ... }` al inicio del 
 - Se creó la cuenta de Instagram **@tupaginacr**: https://www.instagram.com/tupaginacr
 - Enlace agregado al ícono de Instagram del pie de página y a `sameAs`.
 
+### 2026-11-12 — Carrito de compras (Nivel 1: WhatsApp + SINPE Móvil)
+- **Luz de Lavanda** (`proyectos/luz-de-lavanda/index.html`): carrito de compras de ejemplo. Botones "Agregar", panel "Mi pedido" (+/−, eliminar, total en colones), nombre, tipo de entrega y ubicación; el pedido se envía por WhatsApp y el pago se coordina por SINPE Móvil. Número en `NUMERO_WHATSAPP` (al final del archivo). Es un ejemplo: usa número de prueba.
+- **tupágina.cr** (`index.html`): carrito de servicios "Mi solicitud". Botón "Agregar a mi solicitud" en los 3 planes (solo se puede elegir un plan) y "Agregar" en los servicios adicionales. Botón "Mi solicitud" en el menú y bolsita flotante.
+- Nuevo servicio adicional: **Carrito con pedidos por WhatsApp + SINPE Móvil — ₡45.000** con enlace "Ver ejemplo" a Luz de Lavanda. Los servicios adicionales pasaron de 3 a 4 tarjetas. Para cambiar un precio: cambiar el texto **y** `data-precio` del botón.
+- Se actualizaron: tarjeta "Tiendas en línea", pregunta frecuente de tiendas, descripción de Luz de Lavanda en el portafolio (chip "Carrito") y el extra del cotizador.
+- **Sin número de WhatsApp:** mientras `NUMERO_WHATSAPP` sea `"50600000000"`, el formulario de contacto, el cotizador y "Mi solicitud" envían por **correo** a contacto.tupaginacr@gmail.com, y el botón verde flotante se oculta. Al poner el número real, todo cambia solo a WhatsApp.
+- Respaldo de los archivos anteriores: guardados antes del cambio.
+
 ## Pendientes
 
 - [x] Correo del negocio elegido: contacto.tupaginacr@gmail.com (ya está en la página). Falta: nombre visible "tupágina.cr", foto de perfil con el ícono KA y datos de recuperación.
@@ -148,6 +156,8 @@ Los colores se cambian en `index.html`, dentro de `:root { ... }` al inicio del 
   - el botón flotante: `https://wa.me/50600000000`
   - el script: `const NUMERO_WHATSAPP = "50600000000";`
   - y el texto visible `+506 0000-0000` en la sección de contacto.
+  - (Al cambiar `NUMERO_WHATSAPP`, los envíos pasan de correo a WhatsApp y vuelve a aparecer el botón verde.)
+  - También en `proyectos/luz-de-lavanda/index.html` si se quiere probar el carrito con un número real.
 - [x] Portafolio con 3 proyectos conceptuales.
 - [ ] Cuando haya clientes reales: agregarlos al portafolio como proyectos reales (con permiso y reseña).
 - [x] Fotos de Selva y Mar reemplazadas por fotos libres. Opcional: anotar el enlace de origen de cada foto.
