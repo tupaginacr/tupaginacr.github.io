@@ -127,6 +127,20 @@ Los colores se cambian en `index.html`, dentro de `:root { ... }` al inicio del 
 - El 4.º tour cambió de "Traslados privados" a **Observación de fauna** ($50, 2 horas), porque no había foto de buseta.
 - No se usaron: la foto de esnórquel, la segunda foto de caminantes (repetida), el mono solo, el río en la selva y una de las vistas aéreas.
 
+### 2026-11-07 (decimocuarta actualización) — Descuento por portafolio y reseña
+- Nuevo recuadro en Planes y precios: **25 % de descuento** si el cliente permite mostrar su página en el portafolio y deja una reseña. **Cupos limitados** (sin decir cuántos).
+  - Emprende ₡64.000 (antes ₡85.000) · Pyme ₡131.000 (antes ₡175.000) · Empresa ₡236.000 (antes ₡315.000)
+- En el cotizador, nueva casilla "Acepto mostrar mi página en el portafolio y dejar una reseña" que resta el 25 % del plan (`PRECIOS.descuentoPortafolio` = 0.25). El mensaje de WhatsApp lo menciona.
+- Los descuentos se pueden sumar con el paquete Logo + Página.
+
+### 2026-11-12 — Facebook
+- Se creó la página de Facebook **tupágina.cr**: https://www.facebook.com/tupaginacr
+- Enlace agregado al ícono de Facebook del pie de página y a los datos estructurados para Google (`sameAs`).
+
+### 2026-11-12 — Instagram
+- Se creó la cuenta de Instagram **@tupaginacr**: https://www.instagram.com/tupaginacr
+- Enlace agregado al ícono de Instagram del pie de página y a `sameAs`.
+
 ## Pendientes
 
 - [x] Correo del negocio elegido: contacto.tupaginacr@gmail.com (ya está en la página). Falta: nombre visible "tupágina.cr", foto de perfil con el ícono KA y datos de recuperación.
@@ -139,9 +153,12 @@ Los colores se cambian en `index.html`, dentro de `:root { ... }` al inicio del 
 - [x] Fotos de Selva y Mar reemplazadas por fotos libres. Opcional: anotar el enlace de origen de cada foto.
 - [ ] Poner foto propia en la sección "Sobre mí".
 - [ ] Revisar los métodos de pago que aparecen en las preguntas frecuentes (SINPE Móvil y transferencia).
-- [ ] Crear páginas de **Facebook** e **Instagram** del negocio y poner sus enlaces en el pie de página (buscar `href="#" class="red-social"`).
+- [x] Facebook creado y enlazado.
+- [x] Instagram creado y enlazado (@tupaginacr).
+- [x] Nombre de usuario de Facebook: facebook.com/tupaginacr
 - [ ] WhatsApp Business: para más adelante.
 - [ ] LinkedIn: evaluar más adelante.
+- [ ] Definir para uno mismo cuántos cupos tendrá el descuento por portafolio y quitar el recuadro cuando se acaben.
 - [ ] Revisar y ajustar los precios de los extras del cotizador (propuestos, no definitivos).
 - [ ] Consultar con Hacienda o un contador la inscripción para facturar (factura electrónica e IVA) antes del primer cobro formal.
 - [ ] Al comprar dominio: cambiar `https://tupaginacr.github.io/` por el dominio en: etiquetas `og:` (index y proyectos), `canonical` y datos estructurados (`application/ld+json`) de `index.html`, `robots.txt` y `sitemap.xml`.

@@ -22,6 +22,7 @@
     "currenciesAccepted": "CRC, USD",
     "areaServed": { "@type": "Country", "name": "Costa Rica" },
     "address": { "@type": "PostalAddress", "addressLocality": "San José", "addressCountry": "CR" },
+    "sameAs": ["https://www.facebook.com/tupaginacr", "https://www.instagram.com/tupaginacr"],
     "knowsAbout": ["Diseño web", "Desarrollo web", "Landing pages", "Tiendas en línea", "Diseño de logos", "SEO"]
   }
   </script>
@@ -225,6 +226,14 @@
     .paquete .opcion-paquete { background: rgba(255,255,255,.65); border-radius: 16px; padding: 1rem 1.2rem; height: 100%; }
     .paquete .tachado { text-decoration: line-through; color: #55657a; font-size: .9rem; margin-left: .3rem; }
     .paquete .ahorro { display: inline-block; background: var(--tinta); color: #fff; font-size: .72rem; font-weight: 600; padding: .2rem .6rem; border-radius: 50px; }
+
+    .descuento-portafolio { background: rgba(127,209,198,.08); border: 2px solid #7fd1c6; color: #fff; border-radius: 22px; padding: 1.8rem 2rem; }
+    .descuento-portafolio h3 { font-family: 'Fraunces', serif; color: #fff; }
+    .descuento-portafolio .ahorro { display: inline-block; background: #7fd1c6; color: var(--tinta); font-size: .72rem; font-weight: 600; padding: .2rem .7rem; border-radius: 50px; }
+    .descuento-portafolio .cupos { background: transparent; color: #7fd1c6; border: 1px solid #7fd1c6; }
+    .descuento-portafolio .opcion-paquete { background: rgba(255,255,255,.08); color: #fff; border-radius: 16px; padding: .9rem .5rem; height: 100%; }
+    .descuento-portafolio .opcion-paquete .fw-bold { color: #7fd1c6; }
+    .descuento-portafolio .tachado { text-decoration: line-through; color: #9fb0c4; font-size: .9rem; }
 
     /* ===== Cotizador ===== */
     .cotizador-caja { background: #fff; border: 1px solid var(--borde); border-radius: 24px; padding: 2rem; }
@@ -537,8 +546,25 @@
           </div>
         </div>
       </div>
+      <!-- Descuento por portafolio + reseña (si cambia el %, cámbielo también en PRECIOS.descuentoPortafolio del cotizador) -->
+      <div class="descuento-portafolio mt-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <span class="ahorro mb-2">25 % de descuento</span> <span class="ahorro mb-2 cupos">Cupos limitados</span>
+            <h3 class="h3 mb-2">Ayúdenos a crecer y ahorre</h3>
+            <p class="mb-0">Si nos permite mostrar su página en nuestro portafolio y nos deja una reseña de su experiencia, le hacemos un <strong>25 % de descuento</strong> en su plan. <em>Cupos limitados.</em></p>
+          </div>
+          <div class="col-lg-7">
+            <div class="row g-2 text-center">
+              <div class="col-4"><div class="opcion-paquete"><small>Emprende</small><div class="fs-5 fw-bold">₡64.000</div><span class="tachado">₡85.000</span></div></div>
+              <div class="col-4"><div class="opcion-paquete"><small>Pyme</small><div class="fs-5 fw-bold">₡131.000</div><span class="tachado">₡175.000</span></div></div>
+              <div class="col-4"><div class="opcion-paquete"><small>Empresa</small><div class="fs-5 fw-bold">₡236.000</div><span class="tachado">₡315.000</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Paquete Logo + Página (si cambia precios, cámbielos también en PRECIOS.descuentoLogo del cotizador) -->
-      <div class="paquete mt-5">
+      <div class="paquete mt-4">
         <div class="row g-4 align-items-center">
           <div class="col-lg-4">
             <span class="ahorro mb-2">Paquete de arranque</span>
@@ -608,7 +634,8 @@
             </div>
 
             <h3 class="h5 mb-3"><span class="paso-cot">4</span>Después de entregar</h3>
-            <label class="extra-cot"><input type="checkbox" class="form-check-input" id="cMantenimiento"><span><strong>Mantenimiento mensual</strong><small id="pc-mant"></small></span></label>
+            <label class="extra-cot mb-2"><input type="checkbox" class="form-check-input" id="cMantenimiento"><span><strong>Mantenimiento mensual</strong><small id="pc-mant"></small></span></label>
+            <label class="extra-cot"><input type="checkbox" class="form-check-input" id="cPortafolio"><span><strong>Acepto mostrar mi página en el portafolio y dejar una reseña</strong><small>25 % de descuento en el plan · cupos limitados</small></span></label>
           </div>
         </div>
 
@@ -904,8 +931,8 @@
           <h4 class="footer-titulo">Redes sociales</h4>
           <!-- Cambie el # por el enlace de cada red cuando cree las cuentas -->
           <div class="d-flex gap-3">
-            <a href="#" class="red-social" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="red-social" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/tupaginacr" class="red-social" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/tupaginacr" class="red-social" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
       </div>
@@ -965,6 +992,7 @@
         blog:     { nombre: "Blog o sección de noticias", precio: 25000 },
         textos:   { nombre: "Redacción de textos", precio: 25000 }
       },
+      descuentoPortafolio: 0.25,
       descuentoLogo: { emprende: 10000, pyme: 15000, empresa: 15000 },
       mantenimiento: 16000,
       TIPO_CAMBIO: 455
@@ -988,6 +1016,7 @@
         if (c.value === "tienda") { tienda = true; return; }
         lineas.push([PRECIOS.extras[c.value].nombre, PRECIOS.extras[c.value].precio]);
       });
+      if (document.getElementById("cPortafolio").checked) lineas.push(["Descuento por portafolio y reseña (25 %)", -Math.round(PRECIOS.tipos[tipo].precio * PRECIOS.descuentoPortafolio / 1000) * 1000]);
       if (document.querySelector('#cExtras input[value="logo"]').checked) lineas.push(["Descuento paquete logo + página", -PRECIOS.descuentoLogo[tipo]]);
       const total = lineas.reduce((t, l) => t + l[1], 0);
       document.getElementById("cLista").innerHTML = lineas.map(l => `<li><span>${l[0]}</span><b>${colones(l[1])}</b></li>`).join("");
@@ -1008,6 +1037,7 @@
       let texto = "Hola tupágina.cr, hice una cotización en su página:\n" + r.lineas.map(l => "• " + l[0] + ": " + colones(l[1])).join("\n");
       texto += "\nTotal aproximado: " + colones(r.total);
       if (r.mant) texto += "\nMantenimiento mensual: " + colones(PRECIOS.mantenimiento);
+      if (document.getElementById("cPortafolio").checked) texto += "\nAcepto mostrar mi página en el portafolio y dejar una reseña.";
       if (r.tienda) texto += "\nTambién me interesa una tienda con pagos en línea.";
       window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
     });
