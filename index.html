@@ -205,6 +205,20 @@
     .proyecto:hover .miniatura img { transform: scale(1.04); }
     .insignia-concepto { position: absolute; top: 12px; left: 12px; background: rgba(14,35,64,.85); color: #fff; font-size: .72rem; font-weight: 600; padding: .3rem .75rem; border-radius: 50px; }
     .proyecto .info { padding: 1.4rem; }
+    .proyecto-real { border: 2px solid var(--coral); }
+    .proyecto-real .info { padding: 2rem; }
+    .insignia-real { background: var(--verde); top: auto; bottom: 14px; }
+    @media (min-width: 992px) { .proyecto-real .miniatura { aspect-ratio: auto; min-height: 340px; } }
+
+    /* ===== Reseñas ===== */
+    .caja-resena { background: #fff; border: 1px solid var(--borde); border-radius: 24px; padding: 2rem; box-shadow: 0 25px 45px -30px rgba(14,35,64,.35); }
+    .estrellas { display: flex; gap: .35rem; }
+    .estrellas button { border: none; background: none; padding: 0; font-size: 2.3rem; line-height: 1; color: #d6dde6; cursor: pointer; transition: transform .15s, color .15s; }
+    .estrellas button:hover { transform: scale(1.12); }
+    .estrellas button.activa { color: #f5b301; }
+    .texto-estrellas { font-weight: 600; color: var(--gris); font-size: .9rem; min-height: 1.3rem; }
+    .opinion { background: #fff; border: 1px solid var(--borde); border-radius: 20px; padding: 1.5rem; height: 100%; }
+    .opinion .estrellas-fijas { color: #f5b301; letter-spacing: .1em; }
     .proyecto .tipo { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: var(--verde); }
     .proyecto .ver { font-weight: 600; color: var(--verde); font-size: .9rem; white-space: nowrap; }
     .chip { display: inline-block; font-size: .75rem; background: var(--verde-claro); color: var(--verde); padding: .2rem .6rem; border-radius: 50px; margin-right: .3rem; }
@@ -741,25 +755,33 @@
     <div class="container">
       <div class="text-center mb-5">
         <p class="etiqueta">Portafolio</p>
-        <h2>Diseños de muestra</h2>
-        <p class="texto-suave mx-auto" style="max-width:600px">Proyectos conceptuales creados por nuestro equipo para distintos tipos de negocio. Haga clic para ver cada sitio completo.</p>
+        <h2>Nuestro trabajo</h2>
+        <p class="texto-suave mx-auto" style="max-width:620px">Proyectos para clientes y diseños de muestra creados por nuestro equipo para distintos tipos de negocio. Haga clic para ver cada sitio completo.</p>
       </div>
       <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <a class="proyecto" href="proyectos/grano-de-oro/index.html" target="_blank">
-            <div class="miniatura"><img src="img/portafolio-grano-de-oro.jpg" alt="Diseño del sitio Grano de Oro" loading="lazy"><span class="insignia-concepto">Proyecto conceptual</span></div>
-            <div class="info">
-              <p class="tipo mb-1">Tostaduría de café</p>
-              <h3 class="h5 mb-2">Grano de Oro</h3>
-              <p class="texto-suave small mb-3">Sitio para una tostaduría costarricense: catálogo de cafés, historia, recetas y registro al club.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div><span class="chip">Bootstrap</span><span class="chip">HTML5</span><span class="chip">CSS3</span></div>
-                <span class="ver">Ver <i class="bi bi-arrow-up-right"></i></span>
+        <!-- Proyecto real (cliente) -->
+        <div class="col-12">
+          <a class="proyecto proyecto-real" href="https://kadejo.com/" target="_blank" rel="noopener">
+            <div class="row g-0 h-100">
+              <div class="col-lg-7">
+                <div class="miniatura h-100"><img src="img/portafolio-kadejo.jpg" alt="Sitio web de Kadejo Software" loading="lazy" style="object-position: left center"><span class="insignia-concepto insignia-real"><i class="bi bi-patch-check-fill me-1"></i>Cliente real</span></div>
+              </div>
+              <div class="col-lg-5 d-flex">
+                <div class="info d-flex flex-column justify-content-center">
+                  <p class="tipo mb-1">Empresa de tecnología</p>
+                  <h3 class="h4 mb-2">Kadejo Software</h3>
+                  <p class="texto-suave mb-3">Sitio web para una empresa costarricense de infraestructura digital: servidores en la nube, redes corporativas, software a la medida y community management, con preguntas frecuentes, formulario de cotización y contacto por WhatsApp.</p>
+                  <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                    <div><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Responsive</span></div>
+                    <span class="ver">Visitar kadejo.com <i class="bi bi-arrow-up-right"></i></span>
+                  </div>
+                </div>
               </div>
             </div>
           </a>
         </div>
-        <div class="col-md-6 col-lg-4">
+
+        <div class="col-md-6">
           <a class="proyecto" href="proyectos/selva-y-mar/index.html" target="_blank">
             <div class="miniatura"><img src="img/portafolio-selva-y-mar.jpg" alt="Diseño del sitio Selva y Mar Tours" loading="lazy"><span class="insignia-concepto">Proyecto conceptual</span></div>
             <div class="info">
@@ -773,7 +795,7 @@
             </div>
           </a>
         </div>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6">
           <a class="proyecto" href="proyectos/luz-de-lavanda/index.html" target="_blank">
             <div class="miniatura"><img src="img/portafolio-luz-de-lavanda.jpg" alt="Diseño del sitio Luz de Lavanda" loading="lazy"><span class="insignia-concepto">Proyecto conceptual</span></div>
             <div class="info">
@@ -786,6 +808,76 @@
               </div>
             </div>
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OPINIONES (escondida hasta tener reseñas reales) ================= -->
+  <!-- Para mostrarla: quite la clase d-none de la sección y copie una tarjeta .opinion por cada reseña real. -->
+  <section id="opiniones" class="d-none">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="etiqueta">Opiniones</p>
+        <h2>Lo que dicen nuestros clientes</h2>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <!-- Ejemplo de tarjeta (cambie los datos por la reseña real):
+        <div class="col-md-6 col-lg-4">
+          <div class="opinion">
+            <div class="estrellas-fijas mb-2">★★★★★</div>
+            <p class="mb-3">"Aquí va el comentario del cliente."</p>
+            <strong>Nombre del cliente</strong><br><span class="texto-suave small">Nombre del negocio</span>
+          </div>
+        </div>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEJE SU RESEÑA ================= -->
+  <section id="resena">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <p class="etiqueta">Su opinión cuenta</p>
+          <h2>¿Trabajamos juntos? Cuéntenos cómo le fue</h2>
+          <p class="texto-suave">Su reseña ayuda a otros negocios a conocernos y nos ayuda a mejorar. Califique nuestro servicio y déjenos un comentario: toma menos de un minuto.</p>
+          <p class="texto-suave small mb-0"><i class="bi bi-shield-check me-1" style="color:var(--verde)"></i>Solo publicamos su reseña si nos da permiso.</p>
+        </div>
+        <div class="col-lg-7">
+          <form class="caja-resena" id="formResena" novalidate>
+            <label class="form-label fw-semibold d-block">Su calificación</label>
+            <div class="estrellas mb-1" id="estrellas" role="radiogroup" aria-label="Calificación de 1 a 5 estrellas">
+              <button type="button" data-valor="1" aria-label="1 estrella"><i class="bi bi-star-fill"></i></button>
+              <button type="button" data-valor="2" aria-label="2 estrellas"><i class="bi bi-star-fill"></i></button>
+              <button type="button" data-valor="3" aria-label="3 estrellas"><i class="bi bi-star-fill"></i></button>
+              <button type="button" data-valor="4" aria-label="4 estrellas"><i class="bi bi-star-fill"></i></button>
+              <button type="button" data-valor="5" aria-label="5 estrellas"><i class="bi bi-star-fill"></i></button>
+            </div>
+            <p class="texto-estrellas mb-3" id="textoEstrellas">Toque las estrellas para calificar</p>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="rNombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="rNombre">
+              </div>
+              <div class="col-md-6">
+                <label for="rNegocio" class="form-label">Negocio o empresa</label>
+                <input type="text" class="form-control" id="rNegocio">
+              </div>
+              <div class="col-12">
+                <label for="rComentario" class="form-label">Su comentario</label>
+                <textarea class="form-control" id="rComentario" rows="4" placeholder="¿Cómo fue su experiencia con tupágina.cr?"></textarea>
+              </div>
+              <div class="col-12">
+                <label class="d-flex gap-2 small align-items-start"><input type="checkbox" class="form-check-input mt-1" id="rPermiso" checked> Doy permiso para publicar mi reseña con mi nombre y el de mi negocio en la página y redes de tupágina.cr.</label>
+              </div>
+              <div class="col-12">
+                <p id="errorResena" class="small mb-2" style="color:#b0413e"></p>
+                <button type="submit" class="btn btn-principal w-100 btn-enviar" data-texto="Enviar mi reseña"><i class="bi bi-send me-2"></i>Enviar mi reseña</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -962,6 +1054,7 @@
           <ul class="footer-lista">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#planes">Planes y precios</a></li>
+            <li><a href="#resena">Deje su reseña</a></li>
             <li><a href="#cotizador">Cotizador</a></li>
             <li><a href="#proceso">¿Cómo trabajamos?</a></li>
             <li><a href="#portafolio">Portafolio</a></li>
@@ -1224,6 +1317,33 @@
       enviarMensaje(texto, "Solicitud de servicios - " + nombre);
     });
     pintarSolicitud();
+
+    // ===== Reseñas con estrellas =====
+    const TEXTOS_ESTRELLAS = ["", "Malo", "Regular", "Bueno", "Muy bueno", "¡Excelente!"];
+    let calificacion = 0;
+    const botonesEstrella = document.querySelectorAll("#estrellas button");
+    function pintarEstrellas(n) { botonesEstrella.forEach(b => b.classList.toggle("activa", +b.dataset.valor <= n)); }
+    botonesEstrella.forEach(b => {
+      b.addEventListener("mouseenter", () => pintarEstrellas(+b.dataset.valor));
+      b.addEventListener("mouseleave", () => pintarEstrellas(calificacion));
+      b.addEventListener("click", () => {
+        calificacion = +b.dataset.valor; pintarEstrellas(calificacion);
+        document.getElementById("textoEstrellas").textContent = calificacion + " de 5 · " + TEXTOS_ESTRELLAS[calificacion];
+        document.getElementById("errorResena").textContent = "";
+      });
+    });
+    document.getElementById("formResena").addEventListener("submit", e => {
+      e.preventDefault();
+      const nombre = document.getElementById("rNombre").value.trim();
+      const negocio = document.getElementById("rNegocio").value.trim();
+      const comentario = document.getElementById("rComentario").value.trim();
+      const error = document.getElementById("errorResena");
+      if (!calificacion) { error.textContent = "Elija de 1 a 5 estrellas."; return; }
+      if (!nombre || !comentario) { error.textContent = "Escriba su nombre y su comentario."; return; }
+      let texto = `Reseña para tupágina.cr\n\nCalificación: ${"★".repeat(calificacion)}${"☆".repeat(5 - calificacion)} (${calificacion} de 5)\nNombre: ${nombre}${negocio ? "\nNegocio: " + negocio : ""}\n\nComentario:\n${comentario}\n\n`;
+      texto += document.getElementById("rPermiso").checked ? "Doy permiso para publicar esta reseña." : "NO doy permiso para publicar esta reseña.";
+      enviarMensaje(texto, "Reseña de cliente - " + nombre);
+    });
   </script>
 </body>
 </html>

@@ -152,7 +152,17 @@ Los colores se cambian en `index.html`, dentro de `:root { ... }` al inicio del 
 ### 2026-11-12 — Descuento en "Mi solicitud"
 - Al marcar "Acepto que mi página se muestre en el portafolio…", el panel ahora muestra subtotal, el descuento (25 % del plan, igual que el cotizador) y el total actualizado. El mensaje enviado también incluye el descuento.
 
+### 2026-11-13 — Primer cliente real y reseñas
+- **Portafolio:** se agregó **Kadejo Software** (https://kadejo.com/) como proyecto real, en tarjeta grande con insignia "Cliente real", arriba de los diseños de muestra. Título de la sección: "Nuestro trabajo". Imagen: `img/portafolio-kadejo.jpg` (captura real de kadejo.com).
+- **Deje su reseña** (`#resena`): formulario con estrellas de 1 a 5, nombre, negocio, comentario y permiso para publicar. Llega al correo (o a WhatsApp cuando haya número). Enlace "Deje su reseña" en el pie de página.
+- **Opiniones** (`#opiniones`): sección lista pero escondida (`d-none`). Para mostrarla: quitar `d-none` y copiar una tarjeta `.opinion` por cada reseña real (solo con permiso del cliente).
+
+### 2026-11-13 — Se quitó Grano de Oro
+- Se eliminó el proyecto conceptual **Grano de Oro** del portafolio: tarjeta en `index.html`, carpeta `proyectos/grano-de-oro/`, imagen `img/portafolio-grano-de-oro.jpg` y su línea en `sitemap.xml`. Los dos diseños de muestra que quedan (Selva y Mar, Luz de Lavanda) ahora van en dos columnas.
+
 ## Pendientes
+
+- [ ] Pedirle la reseña a Kadejo (enlace: https://tupaginacr.github.io/#resena) y, cuando llegue, mostrar la sección Opiniones.
 
 - [x] Correo del negocio elegido: contacto.tupaginacr@gmail.com (ya está en la página). Falta: nombre visible "tupágina.cr", foto de perfil con el ícono KA y datos de recuperación.
 - [ ] Poner el número real de WhatsApp (línea nueva del negocio, pendiente) en `index.html`:
